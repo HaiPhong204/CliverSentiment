@@ -1,7 +1,3 @@
-import 'package:ezjob/app/features/bottom_navigation_bar/bottom_bar_controller.dart';
-
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

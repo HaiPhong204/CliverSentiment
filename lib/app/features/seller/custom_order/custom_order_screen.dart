@@ -1,8 +1,3 @@
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/chat/chat_controller.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/list_post.dart';
-import 'package:ezjob/data/models/custom_order.dart';
-import 'package:ezjob/data/services/OrderService.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

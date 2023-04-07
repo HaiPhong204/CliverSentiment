@@ -1,11 +1,6 @@
 import 'dart:convert';
 import 'dart:developer';
-
-import 'package:ezjob/data/models/create_review.dart';
-import 'package:ezjob/data/models/custom_order.dart';
-import 'package:ezjob/data/models/order_action.dart';
 import 'package:get/get.dart';
-
 import '../../app/controller/user_controller.dart';
 import '../../app/core/values/strings.dart';
 

@@ -1,9 +1,3 @@
-import 'package:ezjob/app/features/seller/post/controller/step_controller.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/add_post/step1.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/add_post/step2_1pack.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/add_post/step2_3pack.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/add_post/step3.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/add_post/step4.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../../../common_widgets/custom_bottom_navigation_bar.dart';

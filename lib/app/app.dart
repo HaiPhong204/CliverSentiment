@@ -1,7 +1,3 @@
-import 'package:ezjob/app/core/utils/localization_service.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/setting/setting_controller.dart';
-import 'package:ezjob/app/routes/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

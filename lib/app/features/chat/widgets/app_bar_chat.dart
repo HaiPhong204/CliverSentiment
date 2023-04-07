@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'package:ezjob/app/core/utils/utils.dart';
-
 import '../../../core/values/app_colors.dart';
 
 class AppBarChat extends StatelessWidget {

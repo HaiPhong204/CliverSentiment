@@ -1,6 +1,3 @@
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/seller/post/screens/order/screens/seller_order.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/seller_post.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

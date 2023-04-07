@@ -1,11 +1,3 @@
-import 'package:ezjob/app/common_widgets/horizontal_post_item.dart';
-import 'package:ezjob/app/common_widgets/inkWell_wrapper.dart';
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/bottom_navigation_bar/bottom_bar_controller.dart';
-import 'package:ezjob/app/features/seller/post/controller/post_controller.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/controller/manage_post_controller.dart';
-import 'package:ezjob/app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

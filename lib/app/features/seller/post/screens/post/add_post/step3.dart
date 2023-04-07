@@ -1,5 +1,3 @@
-
-import 'package:ezjob/app/common_widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

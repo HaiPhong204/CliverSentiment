@@ -1,4 +1,3 @@
-import 'package:ezjob/app/core/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common_widgets/loading_container.dart';

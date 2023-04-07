@@ -1,5 +1,3 @@
-import 'package:ezjob/app/features/chat/widgets/card_post.dart';
-import 'package:ezjob/data/models/message.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

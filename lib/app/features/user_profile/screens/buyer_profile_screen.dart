@@ -1,8 +1,3 @@
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/user_profile/screens/widgets/seller_about.dart';
-import 'package:ezjob/data/models/model.dart';
-import 'package:ezjob/data/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

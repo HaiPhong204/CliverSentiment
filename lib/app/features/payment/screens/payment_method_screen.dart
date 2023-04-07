@@ -1,7 +1,3 @@
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/payment/payment_controller.dart';
-import 'package:ezjob/app/features/payment/widgets/add_payment_method.dart';
-import 'package:ezjob/app/features/payment/widgets/order_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';

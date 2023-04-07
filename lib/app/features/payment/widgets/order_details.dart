@@ -1,6 +1,4 @@
 import 'dart:math' as math;
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/payment/payment_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

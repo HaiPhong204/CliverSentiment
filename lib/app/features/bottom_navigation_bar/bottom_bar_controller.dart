@@ -1,6 +1,3 @@
-import 'package:ezjob/app/features/buyer/home_screen/home_screen.dart';
-import 'package:ezjob/app/features/buyer/order/screens/buyer_order.dart';
-import 'package:ezjob/app/features/chat/screens/rooms_screen.dart';
 import 'package:get/get.dart';
 import '../seller/home/seller_home.dart';
 import '../seller/post/screens/main_page.dart';

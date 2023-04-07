@@ -1,7 +1,3 @@
-import 'package:ezjob/app/common_widgets/inkWell_wrapper.dart';
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/data/models/model.dart';
 import 'package:flutter/material.dart';
 class CategoryPopular extends StatefulWidget {
   const CategoryPopular({Key? key, required this.subCategory, this.onTap}) : super(key: key);

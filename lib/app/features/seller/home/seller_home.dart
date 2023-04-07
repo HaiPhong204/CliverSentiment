@@ -1,11 +1,3 @@
-import 'package:ezjob/app/common_widgets/circle_avatar_online.dart';
-import 'package:ezjob/app/controller/user_controller.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/seller/home/widgets/card_earn.dart';
-import 'package:ezjob/app/features/seller/home/widgets/card_post.dart';
-import 'package:ezjob/app/features/seller/home/widgets/custom_circular_progress_bar.dart';
-import 'package:ezjob/app/features/seller/home/widgets/custom_expanded.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

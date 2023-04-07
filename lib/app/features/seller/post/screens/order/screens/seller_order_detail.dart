@@ -1,5 +1,3 @@
-import 'package:ezjob/app/features/seller/post/screens/order/widgets/seller_order_timeline.dart';
-import 'package:ezjob/data/models/order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

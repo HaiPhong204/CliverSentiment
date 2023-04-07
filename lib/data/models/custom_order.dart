@@ -1,6 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:ezjob/data/enums/custom_order_status.dart';
-import 'package:ezjob/data/models/simple_post.dart';
 part 'custom_order.g.dart';
 
 @JsonSerializable(explicitToJson: true)

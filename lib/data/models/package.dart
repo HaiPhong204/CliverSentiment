@@ -1,7 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-
-import 'package:ezjob/data/models/simple_post.dart';
-
 part 'package.g.dart';
 
 @JsonSerializable()

@@ -1,5 +1,3 @@
-import 'package:ezjob/app/features/seller/post/screens/order/seller_order_controller.dart';
-import 'package:ezjob/data/models/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';

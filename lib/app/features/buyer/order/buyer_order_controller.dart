@@ -1,9 +1,4 @@
 import 'dart:developer';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/data/models/create_review.dart';
-import 'package:ezjob/data/models/order.dart';
-import 'package:ezjob/data/services/OrderService.dart';
-import 'package:ezjob/data/services/PostService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';

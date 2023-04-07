@@ -1,12 +1,4 @@
 import 'dart:developer';
-import 'package:ezjob/app/controller/user_controller.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/chat/models/copy_chat_data.dart';
-import 'package:ezjob/app/features/chat/models/reply_message_data.dart';
-import 'package:ezjob/data/enums/custom_order_status.dart';
-import 'package:ezjob/data/models/model.dart';
-import 'package:ezjob/data/services/OrderService.dart';
-import 'package:ezjob/data/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';

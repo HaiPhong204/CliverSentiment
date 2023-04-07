@@ -1,5 +1,3 @@
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';

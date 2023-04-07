@@ -1,5 +1,3 @@
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -1,9 +1,3 @@
-import 'package:ezjob/app/features/chat/chat_controller.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/chat/widgets/bottom_sheet_chat.dart';
-import 'package:ezjob/app/features/chat/widgets/room_item.dart';
-import 'package:ezjob/data/models/chat_filter.dart';
-import 'package:ezjob/data/models/label_filter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

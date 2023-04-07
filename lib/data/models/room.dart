@@ -1,9 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:ezjob/data/models/user.dart';
 import 'package:json_annotation/json_annotation.dart';
-
 import 'message.dart';
-
 part 'room.g.dart';
 
 @JsonSerializable(explicitToJson: true)

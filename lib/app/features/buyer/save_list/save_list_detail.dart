@@ -1,11 +1,3 @@
-import 'package:ezjob/app/common_widgets/inkWell_wrapper.dart';
-import 'package:ezjob/app/common_widgets/loading_container.dart';
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/buyer/save_list/widgets/widgets.dart';
-import 'package:ezjob/app/routes/routes.dart';
-import 'package:ezjob/data/models/model.dart';
-import 'package:ezjob/data/services/SaveService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

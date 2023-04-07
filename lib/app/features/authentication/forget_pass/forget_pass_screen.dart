@@ -1,4 +1,3 @@
-import 'package:ezjob/app/common_widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controller/auth/fotget_pass_controller.dart';

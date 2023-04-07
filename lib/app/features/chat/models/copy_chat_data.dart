@@ -1,4 +1,3 @@
-import 'package:ezjob/data/models/message.dart';
 import 'package:get/get.dart';
 
 class CopyChatData {

@@ -1,8 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-
-import 'package:ezjob/data/enums/review_type.dart';
-import 'package:ezjob/data/models/model.dart';
-
 part 'review.g.dart';
 
 @JsonSerializable(explicitToJson: true)

@@ -1,7 +1,4 @@
-import 'package:ezjob/data/enums/status.dart';
-import 'package:ezjob/data/models/resource.dart';
 import 'package:json_annotation/json_annotation.dart';
-
 part 'order_history.g.dart';
 
 @JsonSerializable(explicitToJson: true)

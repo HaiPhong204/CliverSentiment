@@ -1,10 +1,4 @@
-import 'package:ezjob/app/controller/user_controller.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/seller/post/widgets/post/post_package.dart';
-import 'package:ezjob/app/features/seller/post/widgets/post/review_card_item.dart';
-import 'package:ezjob/data/models/model.dart';
-import 'package:ezjob/data/services/services.dart';
-import 'package:flutter/material.dart';
+mport 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';

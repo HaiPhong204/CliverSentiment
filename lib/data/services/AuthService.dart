@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:ezjob/app/core/values/strings.dart';
 import 'package:get/get_connect/connect.dart';
 
 import '../models/user.dart';

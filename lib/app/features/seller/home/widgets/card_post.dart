@@ -1,4 +1,3 @@
-import 'package:ezjob/app/core/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class cardPost extends StatelessWidget {

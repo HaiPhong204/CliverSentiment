@@ -1,13 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:ezjob/app/core/utils/utils.dart';
 import 'package:ezjob/data/enums/action.dart' as Action;
-import 'package:ezjob/data/models/create_resource.dart';
-import 'package:ezjob/data/models/order.dart';
-import 'package:ezjob/data/models/order_action.dart';
-import 'package:ezjob/data/services/OrderService.dart';
-import 'package:ezjob/data/services/services.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';

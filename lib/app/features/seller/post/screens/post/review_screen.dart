@@ -1,8 +1,3 @@
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/controller/id_post_controller.dart';
-import 'package:ezjob/app/features/seller/post/widgets/post/post_review_item.dart';
-import 'package:ezjob/data/models/model.dart';
-import 'package:ezjob/data/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

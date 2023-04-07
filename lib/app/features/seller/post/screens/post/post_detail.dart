@@ -1,12 +1,3 @@
-import 'package:ezjob/app/controller/user_controller.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/payment/payment_controller.dart';
-import 'package:ezjob/app/common_widgets/inkWell_wrapper.dart';
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/controller/review_controller.dart';
-import 'package:ezjob/app/routes/routes.dart';
-import 'package:ezjob/data/models/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

@@ -2,9 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 import 'dart:developer' as dev;
-
-import 'package:ezjob/app/core/utils/localization_service.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

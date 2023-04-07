@@ -1,8 +1,4 @@
 import 'dart:developer';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/data/models/user.dart';
-import 'package:ezjob/data/models/wallet.dart';
-import 'package:ezjob/data/services/AuthService.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

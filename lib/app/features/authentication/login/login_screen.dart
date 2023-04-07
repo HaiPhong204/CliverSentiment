@@ -1,6 +1,3 @@
-import 'package:ezjob/app/common_widgets/custom_textfield.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controller/auth/login_controller.dart';

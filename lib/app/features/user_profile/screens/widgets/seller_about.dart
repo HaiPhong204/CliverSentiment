@@ -1,9 +1,3 @@
-import 'package:ezjob/app/common_widgets/inkWell_wrapper.dart';
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/bottom_navigation_bar/bottom_bar_controller.dart';
-import 'package:ezjob/app/features/user_profile/screens/widgets/edit_profile.dart';
-import 'package:ezjob/data/models/model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

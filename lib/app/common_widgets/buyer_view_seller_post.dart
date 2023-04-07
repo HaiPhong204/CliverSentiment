@@ -1,7 +1,3 @@
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/seller/post/controller/post_controller.dart';
-import 'package:ezjob/app/features/seller/post/screens/post/controller/manage_post_controller.dart';
-import 'package:ezjob/app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,8 +1,3 @@
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/seller/post/controller/post_controller.dart';
-import 'package:ezjob/app/features/seller/post/controller/step_controller.dart';
-import 'package:ezjob/app/features/seller/post/widgets/edit_post/edit_package_detail.dart';
-import 'package:ezjob/data/models/package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

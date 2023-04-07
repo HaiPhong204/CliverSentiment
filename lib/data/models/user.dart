@@ -1,6 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:ezjob/data/models/wallet.dart';
-
 part 'user.g.dart';
 
 @JsonSerializable(explicitToJson: true)

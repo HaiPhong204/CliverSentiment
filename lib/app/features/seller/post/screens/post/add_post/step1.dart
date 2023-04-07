@@ -1,10 +1,3 @@
-import 'package:ezjob/app/common_widgets/custom_textfield.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/seller/post/controller/post_controller.dart';
-import 'package:ezjob/app/features/seller/post/controller/step_controller.dart';
-import 'package:ezjob/data/models/model.dart';
-import 'package:ezjob/data/services/services.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

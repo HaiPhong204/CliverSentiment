@@ -1,13 +1,8 @@
 import 'dart:developer';
-
-import 'package:ezjob/app/features/buyer/order/buyer_order_controller.dart';
-import 'package:ezjob/app/features/buyer/order/widgets/stepper_item.dart';
-import 'package:ezjob/data/models/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-
 import '../../../../../data/enums/review_type.dart';
 import '../../../../../data/enums/status.dart';
 import '../../../../../data/models/model.dart';

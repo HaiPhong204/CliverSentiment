@@ -1,10 +1,3 @@
-import 'package:ezjob/app/features/bottom_navigation_bar/bottom_bar_controller.dart';
-import 'package:ezjob/app/features/chat/chat_controller.dart';
-import 'package:ezjob/app/routes/routes.dart';
-import 'package:ezjob/data/enums/custom_order_status.dart';
-import 'package:ezjob/data/models/custom_order.dart';
-import 'package:ezjob/data/models/model.dart';
-import 'package:ezjob/data/models/simple_post.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

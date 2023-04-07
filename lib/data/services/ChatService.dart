@@ -1,9 +1,5 @@
 import 'dart:developer';
-
-import 'package:ezjob/app/core/values/strings.dart';
-
 import '../../app/controller/user_controller.dart';
-
 import 'package:get/get.dart';
 
 class ChatService extends GetConnect {

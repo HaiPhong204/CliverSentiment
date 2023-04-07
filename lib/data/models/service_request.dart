@@ -1,9 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:ezjob/data/models/user.dart';
-
 import 'category.dart';
 import 'sub_category.dart';
-
 part 'service_request.g.dart';
 
 @JsonSerializable(explicitToJson: true)

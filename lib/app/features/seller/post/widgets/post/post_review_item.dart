@@ -1,5 +1,3 @@
-import 'package:ezjob/app/common_widgets/loading_container.dart';
-import 'package:ezjob/data/models/model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,10 +1,4 @@
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/features/chat/chat_controller.dart';
-import 'package:ezjob/app/features/chat/widgets/message_custom_order.dart';
-import 'package:ezjob/app/features/chat/widgets/message_item.dart';
-import 'package:ezjob/app/features/chat/widgets/message_related_post.dart';
-import 'package:ezjob/data/models/message.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';

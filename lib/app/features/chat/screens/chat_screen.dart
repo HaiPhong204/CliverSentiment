@@ -1,8 +1,3 @@
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/chat/widgets/card_post.dart';
-import 'package:ezjob/app/features/chat/widgets/image_attach_popup.dart';
-import 'package:ezjob/app/features/chat/widgets/message_widget.dart';
-import 'package:ezjob/data/models/message.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../chat_controller.dart';

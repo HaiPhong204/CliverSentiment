@@ -1,8 +1,4 @@
 import 'dart:developer';
-import 'package:ezjob/app/controller/user_controller.dart';
-import 'package:ezjob/data/models/create_message.dart';
-import 'package:ezjob/data/models/message.dart';
-import 'package:ezjob/data/services/NotificationService.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:logging/src/logger.dart';

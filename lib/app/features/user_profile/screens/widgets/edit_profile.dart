@@ -1,11 +1,4 @@
 import 'dart:io';
-import 'package:ezjob/app/common_widgets/inkWell_wrapper.dart';
-import 'package:ezjob/app/common_widgets/loading_container.dart';
-import 'package:ezjob/app/common_widgets/unfocus.dart';
-import 'package:ezjob/app/core/utils/permission_helper.dart';
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/data/models/model.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

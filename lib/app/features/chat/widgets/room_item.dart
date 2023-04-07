@@ -1,7 +1,3 @@
-import 'package:ezjob/app/features/chat/chat_controller.dart';
-import 'package:ezjob/app/controller/user_controller.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/data/models/message.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';

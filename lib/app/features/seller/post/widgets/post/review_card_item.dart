@@ -1,6 +1,3 @@
-import 'package:ezjob/app/common_widgets/loading_container.dart';
-import 'package:ezjob/app/core/utils/size_config.dart';
-import 'package:ezjob/data/models/model.dart';
 import 'package:flutter/material.dart';
 
 class CustomReviewCardItem extends StatefulWidget {

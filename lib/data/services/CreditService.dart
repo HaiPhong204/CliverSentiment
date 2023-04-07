@@ -1,7 +1,4 @@
 import 'dart:convert';
-
-import 'package:ezjob/app/controller/user_controller.dart';
-import 'package:ezjob/app/core/values/strings.dart';
 import 'package:get/get.dart';
 
 class CreditService extends GetConnect {

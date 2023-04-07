@@ -1,11 +1,4 @@
 import 'dart:io';
-import 'package:ezjob/app/controller/user_controller.dart';
-import 'package:ezjob/app/core/utils/utils.dart';
-import 'package:ezjob/app/core/values/app_colors.dart';
-import 'package:ezjob/app/features/bottom_navigation_bar/bottom_bar_controller.dart';
-import 'package:ezjob/app/features/chat/chat_controller.dart';
-import 'package:ezjob/app/routes/routes.dart';
-import 'package:ezjob/data/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
