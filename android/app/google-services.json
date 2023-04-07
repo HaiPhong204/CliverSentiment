@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "852815831189",
+    "project_id": "cliver-beta",
+    "storage_bucket": "cliver-beta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852815831189:android:744545f39674b79b603b9c",
+        "android_client_info": {
+          "package_name": "com.example.cliver_mobile_beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852815831189-nqds1gsq6v25co7qvqbfmo951hhimdk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiqKaGKd2GB5MpDArMx57weBZ6aZDclWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852815831189-nqds1gsq6v25co7qvqbfmo951hhimdk4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
