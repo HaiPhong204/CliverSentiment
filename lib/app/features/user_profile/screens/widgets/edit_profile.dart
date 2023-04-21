@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '../../../../../data/models/model.dart';
+
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key, required this.user, this.onSave}) : super(key: key);
   final User user;

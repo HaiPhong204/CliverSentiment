@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
-
 import '../../data/models/post.dart';
 import '../../data/services/services.dart';
+import '../core/core.dart';
 import '../features/seller/post/controller/post_controller.dart';
 import '../routes/routes.dart';
-import 'loading_container.dart';
+import 'common_widgets.dart';
 
 class HorizontalPostItem extends StatefulWidget {
   const HorizontalPostItem(

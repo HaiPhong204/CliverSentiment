@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
+import '../../../data/models/model.dart';
 import '../../controller/user_controller.dart';
 import '../../core/utils/utils.dart';
 import '../../core/values/app_colors.dart';

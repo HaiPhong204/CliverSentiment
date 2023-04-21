@@ -1,9 +1,12 @@
+import '../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../../data/models/wallet.dart';
+import '../../../data/models/model.dart';
+import '../../../data/services/services.dart';
+import '../../routes/routes.dart';
+import '../controller.dart';
 
 class LoginController extends GetxController {
   final TextEditingController email = TextEditingController();
@@ -19,8 +22,6 @@ class LoginController extends GetxController {
     var res = await AuthService.instance
         .login(user: User(email: email.text, password: pass.text));
     EasyLoading.dismiss();
-
-    print(res.body);
 
     if (res.isOk) {
       //save user data

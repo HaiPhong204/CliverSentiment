@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../core/utils/size_config.dart';
-import '../core/values/app_colors.dart';
 import 'loading_container.dart';
 
 class BuyerViewSellerPostScreen extends StatefulWidget {

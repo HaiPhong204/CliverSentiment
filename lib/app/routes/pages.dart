@@ -1,10 +1,5 @@
 import 'package:get/get.dart';
-import '../features/authentication/login/login_screen.dart';
-import '../features/authentication/signup/screens/signup_screen.dart';
-import '../features/buyer/order/screens/buyer_order_detail.dart';
-import '../features/seller/custom_order/custom_order_screen.dart';
-import '../features/seller/post/screens/order/screens/seller_order_detail.dart';
-import '../features/seller/post/screens/post/post_detail.dart';
+import 'routes.dart';
 
 //routes navigation
 class AppPages {
