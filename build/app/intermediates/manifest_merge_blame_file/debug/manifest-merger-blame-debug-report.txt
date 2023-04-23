@@ -1,0 +1,552 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.cliver_mobile_beta"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="33" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/windy/Documents/AndroidStudio/cliver_sentiment/android/app/src/main/AndroidManifest.xml:3:5-66
+15-->/Users/windy/Documents/AndroidStudio/cliver_sentiment/android/app/src/main/AndroidManifest.xml:3:22-64
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->/Users/windy/Documents/AndroidStudio/cliver_sentiment/android/app/src/main/AndroidManifest.xml:4:5-79
+16-->/Users/windy/Documents/AndroidStudio/cliver_sentiment/android/app/src/main/AndroidManifest.xml:4:22-77
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+17-->/Users/windy/Documents/AndroidStudio/cliver_sentiment/android/app/src/main/AndroidManifest.xml:5:5-81
+17-->/Users/windy/Documents/AndroidStudio/cliver_sentiment/android/app/src/main/AndroidManifest.xml:5:22-78
+18
+19    <queries>
+19-->[:file_picker] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
+20        <intent>
+20-->[:file_picker] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
+21            <action android:name="android.intent.action.GET_CONTENT" />
+21-->[:file_picker] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
+21-->[:file_picker] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
+22
+23            <data android:mimeType="*/*" />
+23-->[:file_picker] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
+23-->[:file_picker] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
+24        </intent>
+25        <intent>
+25-->[:flutter_downloader] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:11:9-13:18
+26            <action android:name="android.intent.action.VIEW" />
+26-->[:flutter_downloader] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-65
+26-->[:flutter_downloader] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:12:21-62
+27        </intent>
+28    </queries>
+29
+30    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+30-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+30-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
+31    <uses-permission android:name="android.permission.VIBRATE" />
+31-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-66
+31-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-63
+32    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+32-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-81
+32-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-78
+33    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+33-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-79
+33-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:12:22-76
+34    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+34-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-77
+34-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-74
+35    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+35-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:26:5-79
+35-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:26:22-76
+36    <uses-permission android:name="android.permission.WAKE_LOCK" />
+36-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:25:5-68
+36-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:25:22-65
+37    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+37-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:5-77
+37-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:22-74
+38
+39    <permission
+39-->[androidx.core:core:1.9.0] /Users/windy/.gradle/caches/transforms-3/d0bb3b3e8e3323db8a9208a01a580542/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+40        android:name="com.example.cliver_mobile_beta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+40-->[androidx.core:core:1.9.0] /Users/windy/.gradle/caches/transforms-3/d0bb3b3e8e3323db8a9208a01a580542/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+41        android:protectionLevel="signature" />
+41-->[androidx.core:core:1.9.0] /Users/windy/.gradle/caches/transforms-3/d0bb3b3e8e3323db8a9208a01a580542/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+42
+43    <uses-permission android:name="com.example.cliver_mobile_beta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+43-->[androidx.core:core:1.9.0] /Users/windy/.gradle/caches/transforms-3/d0bb3b3e8e3323db8a9208a01a580542/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+43-->[androidx.core:core:1.9.0] /Users/windy/.gradle/caches/transforms-3/d0bb3b3e8e3323db8a9208a01a580542/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+44
+45    <application
+46        android:name="android.app.Application"
+47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+47-->[androidx.core:core:1.9.0] /Users/windy/.gradle/caches/transforms-3/d0bb3b3e8e3323db8a9208a01a580542/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+48        android:debuggable="true"
+49        android:icon="@mipmap/ic_launcher"
+50        android:label="cliver_sentiment" >
+51        <provider
+52            android:name="vn.hunghd.flutterdownloader.DownloadedFileProvider"
+53            android:authorities="com.example.cliver_mobile_beta.flutter_downloader.provider"
+54            android:exported="false"
+55            android:grantUriPermissions="true" >
+56            <meta-data
+56-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:75
+57                android:name="android.support.FILE_PROVIDER_PATHS"
+57-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+58                android:resource="@xml/provider_paths" />
+58-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
+59        </provider>
+60        <provider
+61            android:name="androidx.core.content.FileProvider"
+62            android:authorities="com.example.cliver_mobile_beta.provider"
+63            android:exported="false"
+64            android:grantUriPermissions="true" >
+65            <meta-data
+65-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:75
+66                android:name="android.support.FILE_PROVIDER_PATHS"
+66-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+67                android:resource="@xml/provider_paths" />
+67-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
+68        </provider>
+69
+70        <activity
+71            android:name="com.example.cliver_mobile_beta.MainActivity"
+72            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+73            android:exported="true"
+74            android:hardwareAccelerated="true"
+75            android:launchMode="singleTop"
+76            android:theme="@style/LaunchTheme"
+77            android:windowSoftInputMode="adjustResize" >
+78
+79            <!--
+80                 Specifies an Android theme to apply to this Activity as soon as
+81                 the Android process has started. This theme is visible to the user
+82                 while the Flutter UI initializes. After that, this theme continues
+83                 to determine the Window background behind the Flutter UI.
+84            -->
+85            <meta-data
+86                android:name="io.flutter.embedding.android.NormalTheme"
+87                android:resource="@style/NormalTheme" />
+88
+89            <intent-filter>
+90                <action android:name="android.intent.action.MAIN" />
+91
+92                <category android:name="android.intent.category.LAUNCHER" />
+93            </intent-filter>
+94        </activity>
+95        <!--
+96             Don't delete the meta-data below.
+97             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+98        -->
+99        <meta-data
+100            android:name="flutterEmbedding"
+101            android:value="2" />
+102
+103        <service
+103-->[:firebase_auth] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+104            android:name="com.google.firebase.components.ComponentDiscoveryService"
+104-->[:firebase_auth] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
+105            android:directBootAware="true"
+105-->[com.google.firebase:firebase-common:20.3.2] /Users/windy/.gradle/caches/transforms-3/3ae78c668ca180102e653ce5048112ee/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:34:13-43
+106            android:exported="false" >
+106-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:68:13-37
+107            <meta-data
+107-->[:firebase_auth] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+108                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+108-->[:firebase_auth] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[:firebase_auth] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+110            <meta-data
+110-->[:firebase_storage] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+111                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+111-->[:firebase_storage] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-126
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[:firebase_storage] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+113            <meta-data
+113-->[:firebase_core] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+114                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+114-->[:firebase_core] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+115                android:value="com.google.firebase.components.ComponentRegistrar" />
+115-->[:firebase_core] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+116            <meta-data
+116-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:69:13-71:85
+117                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+117-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:70:17-109
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:71:17-82
+119            <meta-data
+119-->[com.google.firebase:firebase-storage:20.1.0] /Users/windy/.gradle/caches/transforms-3/dfa7e0886b6b6c2df9f0a1256930951e/transformed/jetified-firebase-storage-20.1.0/AndroidManifest.xml:32:13-34:85
+120                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+120-->[com.google.firebase:firebase-storage:20.1.0] /Users/windy/.gradle/caches/transforms-3/dfa7e0886b6b6c2df9f0a1256930951e/transformed/jetified-firebase-storage-20.1.0/AndroidManifest.xml:33:17-107
+121                android:value="com.google.firebase.components.ComponentRegistrar" />
+121-->[com.google.firebase:firebase-storage:20.1.0] /Users/windy/.gradle/caches/transforms-3/dfa7e0886b6b6c2df9f0a1256930951e/transformed/jetified-firebase-storage-20.1.0/AndroidManifest.xml:34:17-82
+122        </service>
+123
+124        <provider
+124-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+125            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+125-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-82
+126            android:authorities="com.example.cliver_mobile_beta.flutter.image_provider"
+126-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-74
+127            android:exported="false"
+127-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+128            android:grantUriPermissions="true" >
+128-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+129            <meta-data
+129-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:75
+130                android:name="android.support.FILE_PROVIDER_PATHS"
+130-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+131                android:resource="@xml/flutter_image_picker_file_paths" />
+131-->[:image_picker_android] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
+132        </provider>
+133
+134        <receiver
+134-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
+135            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"
+135-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-91
+136            android:exported="false" />
+136-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+137        <receiver
+137-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+138            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+138-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-97
+139            android:exported="false" />
+139-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+140        <receiver
+140-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-31:20
+141            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+141-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-101
+142            android:exported="false" >
+142-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+143            <intent-filter>
+143-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-30:29
+144                <action android:name="android.intent.action.BOOT_COMPLETED" />
+144-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:17-79
+144-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:25-76
+145                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+145-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:27:17-84
+145-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:27:25-81
+146                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+146-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-82
+146-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-79
+147                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+147-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:17-82
+147-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:25-79
+148            </intent-filter>
+149        </receiver>
+150
+151        <uses-library
+151-->[androidx.window:window:1.0.0] /Users/windy/.gradle/caches/transforms-3/f4f21a6d3ced5abebaff2655ad5b902d/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+152            android:name="androidx.window.extensions"
+152-->[androidx.window:window:1.0.0] /Users/windy/.gradle/caches/transforms-3/f4f21a6d3ced5abebaff2655ad5b902d/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+153            android:required="false" />
+153-->[androidx.window:window:1.0.0] /Users/windy/.gradle/caches/transforms-3/f4f21a6d3ced5abebaff2655ad5b902d/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+154        <uses-library
+154-->[androidx.window:window:1.0.0] /Users/windy/.gradle/caches/transforms-3/f4f21a6d3ced5abebaff2655ad5b902d/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+155            android:name="androidx.window.sidecar"
+155-->[androidx.window:window:1.0.0] /Users/windy/.gradle/caches/transforms-3/f4f21a6d3ced5abebaff2655ad5b902d/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+156            android:required="false" />
+156-->[androidx.window:window:1.0.0] /Users/windy/.gradle/caches/transforms-3/f4f21a6d3ced5abebaff2655ad5b902d/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+157
+158        <activity
+158-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:29:9-46:20
+159            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+159-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:30:13-80
+160            android:excludeFromRecents="true"
+160-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:31:13-46
+161            android:exported="true"
+161-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:32:13-36
+162            android:launchMode="singleTask"
+162-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:33:13-44
+163            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+163-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:34:13-72
+164            <intent-filter>
+164-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:35:13-45:29
+165                <action android:name="android.intent.action.VIEW" />
+165-->[:flutter_downloader] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-65
+165-->[:flutter_downloader] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:12:21-62
+166
+167                <category android:name="android.intent.category.DEFAULT" />
+167-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:38:17-76
+167-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:38:27-73
+168                <category android:name="android.intent.category.BROWSABLE" />
+168-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:39:17-78
+168-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:39:27-75
+169
+170                <data
+170-->[:file_picker] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
+171                    android:host="firebase.auth"
+172                    android:path="/"
+173                    android:scheme="genericidp" />
+174            </intent-filter>
+175        </activity>
+176        <activity
+176-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:47:9-64:20
+177            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+177-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:48:13-79
+178            android:excludeFromRecents="true"
+178-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:49:13-46
+179            android:exported="true"
+179-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:50:13-36
+180            android:launchMode="singleTask"
+180-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:51:13-44
+181            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+181-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:52:13-72
+182            <intent-filter>
+182-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:53:13-63:29
+183                <action android:name="android.intent.action.VIEW" />
+183-->[:flutter_downloader] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-65
+183-->[:flutter_downloader] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:12:21-62
+184
+185                <category android:name="android.intent.category.DEFAULT" />
+185-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:38:17-76
+185-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:38:27-73
+186                <category android:name="android.intent.category.BROWSABLE" />
+186-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:39:17-78
+186-->[com.google.firebase:firebase-auth:21.2.0] /Users/windy/.gradle/caches/transforms-3/b22111d4d67ebe51b28bca3bab417e00/transformed/jetified-firebase-auth-21.2.0/AndroidManifest.xml:39:27-75
+187
+188                <data
+188-->[:file_picker] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
+189                    android:host="firebase.auth"
+190                    android:path="/"
+191                    android:scheme="recaptcha" />
+192            </intent-filter>
+193        </activity>
+194
+195        <provider
+195-->[com.google.firebase:firebase-common:20.3.2] /Users/windy/.gradle/caches/transforms-3/3ae78c668ca180102e653ce5048112ee/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+196            android:name="com.google.firebase.provider.FirebaseInitProvider"
+196-->[com.google.firebase:firebase-common:20.3.2] /Users/windy/.gradle/caches/transforms-3/3ae78c668ca180102e653ce5048112ee/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+197            android:authorities="com.example.cliver_mobile_beta.firebaseinitprovider"
+197-->[com.google.firebase:firebase-common:20.3.2] /Users/windy/.gradle/caches/transforms-3/3ae78c668ca180102e653ce5048112ee/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+198            android:directBootAware="true"
+198-->[com.google.firebase:firebase-common:20.3.2] /Users/windy/.gradle/caches/transforms-3/3ae78c668ca180102e653ce5048112ee/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+199            android:exported="false"
+199-->[com.google.firebase:firebase-common:20.3.2] /Users/windy/.gradle/caches/transforms-3/3ae78c668ca180102e653ce5048112ee/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+200            android:initOrder="100" />
+200-->[com.google.firebase:firebase-common:20.3.2] /Users/windy/.gradle/caches/transforms-3/3ae78c668ca180102e653ce5048112ee/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+201
+202        <activity
+202-->[com.google.android.gms:play-services-base:18.0.1] /Users/windy/.gradle/caches/transforms-3/c313295b789e646a70f33814fc09f49c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+203            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+203-->[com.google.android.gms:play-services-base:18.0.1] /Users/windy/.gradle/caches/transforms-3/c313295b789e646a70f33814fc09f49c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+204            android:exported="false"
+204-->[com.google.android.gms:play-services-base:18.0.1] /Users/windy/.gradle/caches/transforms-3/c313295b789e646a70f33814fc09f49c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+205            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+205-->[com.google.android.gms:play-services-base:18.0.1] /Users/windy/.gradle/caches/transforms-3/c313295b789e646a70f33814fc09f49c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+206
+207        <meta-data
+207-->[com.google.android.gms:play-services-basement:18.1.0] /Users/windy/.gradle/caches/transforms-3/de08eee8392a6c862d07ccced4c0cdae/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+208            android:name="com.google.android.gms.version"
+208-->[com.google.android.gms:play-services-basement:18.1.0] /Users/windy/.gradle/caches/transforms-3/de08eee8392a6c862d07ccced4c0cdae/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+209            android:value="@integer/google_play_services_version" />
+209-->[com.google.android.gms:play-services-basement:18.1.0] /Users/windy/.gradle/caches/transforms-3/de08eee8392a6c862d07ccced4c0cdae/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+210
+211        <provider
+211-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:31:9-39:20
+212            android:name="androidx.startup.InitializationProvider"
+212-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:32:13-67
+213            android:authorities="com.example.cliver_mobile_beta.androidx-startup"
+213-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:33:13-68
+214            android:exported="false" >
+214-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:34:13-37
+215            <meta-data
+215-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:36:13-38:52
+216                android:name="androidx.work.WorkManagerInitializer"
+216-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:37:17-68
+217                android:value="androidx.startup" />
+217-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:38:17-49
+218        </provider>
+219
+220        <service
+220-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:41:9-46:35
+221            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+221-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:42:13-88
+222            android:directBootAware="false"
+222-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:43:13-44
+223            android:enabled="@bool/enable_system_alarm_service_default"
+223-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:44:13-72
+224            android:exported="false" />
+224-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:45:13-37
+225        <service
+225-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:47:9-53:35
+226            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+226-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:48:13-84
+227            android:directBootAware="false"
+227-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:49:13-44
+228            android:enabled="@bool/enable_system_job_service_default"
+228-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:50:13-70
+229            android:exported="true"
+229-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:51:13-36
+230            android:permission="android.permission.BIND_JOB_SERVICE" />
+230-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:52:13-69
+231        <service
+231-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:54:9-59:35
+232            android:name="androidx.work.impl.foreground.SystemForegroundService"
+232-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:55:13-81
+233            android:directBootAware="false"
+233-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:56:13-44
+234            android:enabled="@bool/enable_system_foreground_service_default"
+234-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:57:13-77
+235            android:exported="false" />
+235-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:58:13-37
+236
+237        <receiver
+237-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:61:9-66:35
+238            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+238-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:62:13-88
+239            android:directBootAware="false"
+239-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:63:13-44
+240            android:enabled="true"
+240-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:64:13-35
+241            android:exported="false" />
+241-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:65:13-37
+242        <receiver
+242-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:67:9-77:20
+243            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+243-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:68:13-106
+244            android:directBootAware="false"
+244-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:69:13-44
+245            android:enabled="false"
+245-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:70:13-36
+246            android:exported="false" >
+246-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:71:13-37
+247            <intent-filter>
+247-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:73:13-76:29
+248                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+248-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:17-87
+248-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:25-84
+249                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+249-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:17-90
+249-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:25-87
+250            </intent-filter>
+251        </receiver>
+252        <receiver
+252-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:78:9-88:20
+253            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+253-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:79:13-104
+254            android:directBootAware="false"
+254-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:80:13-44
+255            android:enabled="false"
+255-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:81:13-36
+256            android:exported="false" >
+256-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:82:13-37
+257            <intent-filter>
+257-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:84:13-87:29
+258                <action android:name="android.intent.action.BATTERY_OKAY" />
+258-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:17-77
+258-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:25-74
+259                <action android:name="android.intent.action.BATTERY_LOW" />
+259-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:17-76
+259-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:25-73
+260            </intent-filter>
+261        </receiver>
+262        <receiver
+262-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:89:9-99:20
+263            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+263-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:90:13-104
+264            android:directBootAware="false"
+264-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:91:13-44
+265            android:enabled="false"
+265-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:92:13-36
+266            android:exported="false" >
+266-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:93:13-37
+267            <intent-filter>
+267-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:95:13-98:29
+268                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+268-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:17-83
+268-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:25-80
+269                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+269-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:17-82
+269-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:25-79
+270            </intent-filter>
+271        </receiver>
+272        <receiver
+272-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:100:9-109:20
+273            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+273-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:101:13-103
+274            android:directBootAware="false"
+274-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:102:13-44
+275            android:enabled="false"
+275-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:103:13-36
+276            android:exported="false" >
+276-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:104:13-37
+277            <intent-filter>
+277-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:106:13-108:29
+278                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+278-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:17-79
+278-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:25-76
+279            </intent-filter>
+280        </receiver>
+281        <receiver
+281-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:110:9-121:20
+282            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+282-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:111:13-88
+283            android:directBootAware="false"
+283-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:112:13-44
+284            android:enabled="false"
+284-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:113:13-36
+285            android:exported="false" >
+285-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:114:13-37
+286            <intent-filter>
+286-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:116:13-120:29
+287                <action android:name="android.intent.action.BOOT_COMPLETED" />
+287-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:17-79
+287-->[:flutter_local_notifications] /Users/windy/Documents/AndroidStudio/cliver_sentiment/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:25-76
+288                <action android:name="android.intent.action.TIME_SET" />
+288-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:17-73
+288-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:25-70
+289                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+289-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:17-81
+289-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:25-78
+290            </intent-filter>
+291        </receiver>
+292        <receiver
+292-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:122:9-131:20
+293            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+293-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:123:13-99
+294            android:directBootAware="false"
+294-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:124:13-44
+295            android:enabled="@bool/enable_system_alarm_service_default"
+295-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:125:13-72
+296            android:exported="false" >
+296-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:126:13-37
+297            <intent-filter>
+297-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:128:13-130:29
+298                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+298-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:17-98
+298-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:25-95
+299            </intent-filter>
+300        </receiver>
+301        <receiver
+301-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:132:9-142:20
+302            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+302-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:133:13-78
+303            android:directBootAware="false"
+303-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:134:13-44
+304            android:enabled="true"
+304-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:135:13-35
+305            android:exported="true"
+305-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:136:13-36
+306            android:permission="android.permission.DUMP" >
+306-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:137:13-57
+307            <intent-filter>
+307-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:139:13-141:29
+308                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+308-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:17-88
+308-->[androidx.work:work-runtime:2.7.1] /Users/windy/.gradle/caches/transforms-3/7bd69e3531edc9851b7a42cb4cbd65b7/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:25-85
+309            </intent-filter>
+310        </receiver>
+311
+312        <service
+312-->[androidx.room:room-runtime:2.2.5] /Users/windy/.gradle/caches/transforms-3/730f9c080b517efcd8db7091555e3067/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+313            android:name="androidx.room.MultiInstanceInvalidationService"
+313-->[androidx.room:room-runtime:2.2.5] /Users/windy/.gradle/caches/transforms-3/730f9c080b517efcd8db7091555e3067/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+314            android:directBootAware="true"
+314-->[androidx.room:room-runtime:2.2.5] /Users/windy/.gradle/caches/transforms-3/730f9c080b517efcd8db7091555e3067/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+315            android:exported="false" />
+315-->[androidx.room:room-runtime:2.2.5] /Users/windy/.gradle/caches/transforms-3/730f9c080b517efcd8db7091555e3067/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+316    </application>
+317
+318</manifest>
