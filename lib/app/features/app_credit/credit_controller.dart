@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import '../../../data/models/model.dart';
 import '../../../data/services/services.dart';
+import '../features.dart';
 
 class CreditController extends GetxController {
   String amount = "";

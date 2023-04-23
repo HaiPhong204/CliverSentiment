@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import '../../../../../data/models/model.dart';
+import '../../../../../data/services/services.dart';
+import '../../../../common_widgets/common_widgets.dart';
+import '../../../../core/core.dart';
 
 class BottomSaveList extends StatefulWidget {
   const BottomSaveList({Key? key, this.icon, this.onTapChangeStatus, this.serviceId, this.sellerId}) : super(key: key);
