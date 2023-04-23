@@ -3,8 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-
-import '../../../core/utils/utils.dart';
+import '../../../controller/controller.dart';
+import '../../../core/core.dart';
+import '../../features.dart';
 
 class EarningScreen extends StatefulWidget {
   const EarningScreen({Key? key}) : super(key: key);

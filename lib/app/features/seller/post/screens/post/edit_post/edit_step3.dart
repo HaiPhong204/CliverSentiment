@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-
 import '../../../../../../../data/models/post.dart';
+import '../../../../../../common_widgets/common_widgets.dart';
 import '../../../controller/post_controller.dart';
 import '../../../controller/step_controller.dart';
 

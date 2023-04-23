@@ -1,8 +1,8 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../core/values/app_colors.dart';
+import '../../../core/core.dart';
+import '../../features.dart';
 
 class OrderDetails extends StatelessWidget {
   OrderDetails({super.key});

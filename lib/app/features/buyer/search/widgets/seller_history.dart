@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../../../data/models/model.dart';
+import '../../../../common_widgets/common_widgets.dart';
+import '../../../../core/core.dart';
+import '../../../../routes/routes.dart';
+
 class SellerHistory extends StatefulWidget {
   const SellerHistory({Key? key, this.onTapValueHistory}) : super(key: key);
   final void Function(String)? onTapValueHistory;

@@ -1,8 +1,8 @@
+import '../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../core/values/app_colors.dart';
-import 'button_icon.dart';
+import '../../../routes/routes.dart';
+import '../../features.dart';
 
 class ImageAttachPopup extends StatelessWidget {
   const ImageAttachPopup({super.key});

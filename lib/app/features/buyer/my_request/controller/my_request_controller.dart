@@ -1,10 +1,10 @@
+import '../../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:textfield_tags/textfield_tags.dart';
-
-import '../../../../../data/models/service_request.dart';
-import '../../../../../data/services/RequestService.dart';
+import '../../../../../data/models/model.dart';
+import '../../../../../data/services/services.dart';
 
 class MyRequestController extends GetxController {
   //DATA FROM API

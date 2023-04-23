@@ -1,10 +1,13 @@
+import '../../../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import '../../../../../../data/models/model.dart';
 import '../../../../../../data/services/services.dart';
-import '../../../../buyer/home_screen/widgets/widgets.dart';
-import '../../widgets/post/custom_app_bar.dart';
-import '../../widgets/post/post_detail_body.dart';
+import '../../../../../common_widgets/common_widgets.dart';
+import '../../../../../controller/controller.dart';
+import '../../../../../routes/routes.dart';
+import '../../../../features.dart';
 
 class PostDetailScreen extends StatefulWidget {
   const PostDetailScreen({Key? key}) : super(key: key);

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../data/enums/screen.dart';
 import '../../../data/services/SignalRService.dart';
 import '../../common_widgets/custom_bottom_navigation_bar.dart';
-
-import '../chat/chat_controller.dart';
+import '../../core/core.dart';
+import '../features.dart';
 
 class MyBottomBar extends StatefulWidget {
   const MyBottomBar({Key? key}) : super(key: key);

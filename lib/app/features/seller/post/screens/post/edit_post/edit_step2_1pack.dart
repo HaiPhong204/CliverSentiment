@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import '../../../../../../../data/models/model.dart';
+import '../../../../../../core/core.dart';
+import '../../../../../features.dart';
 
 class Edit_Step2_1pack extends StatefulWidget {
   const Edit_Step2_1pack({Key? key}) : super(key: key);

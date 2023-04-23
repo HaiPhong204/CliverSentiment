@@ -6,11 +6,10 @@ import 'package:intl/intl.dart';
 import '../../../../../data/enums/review_type.dart';
 import '../../../../../data/enums/status.dart';
 import '../../../../../data/models/model.dart';
-import '../../../../../data/models/order_history.dart';
-import '../../../../../data/models/simple_post.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../../core/values/app_colors.dart';
 import '../../../../routes/routes.dart';
+import '../../../features.dart';
 
 class BuyerOrderTimeline extends StatefulWidget {
   const BuyerOrderTimeline({super.key, required this.order});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../../data/models/order.dart';
+import '../../../features.dart';
 
 class BuyerOrderDetail extends StatefulWidget {
   const BuyerOrderDetail({Key? key}) : super(key: key);

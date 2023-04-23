@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../data/models/model.dart';
+import '../../features.dart';
 
 class MessageRelatedPost extends StatelessWidget {
   const MessageRelatedPost(

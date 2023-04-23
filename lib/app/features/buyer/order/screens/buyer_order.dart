@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../../data/models/order.dart';
 import '../../../../common_widgets/horizontal_order_item.dart';
 import '../../../../routes/routes.dart';
+import '../../../features.dart';
 
 class BuyerOrderScreen extends StatefulWidget {
   const BuyerOrderScreen({Key? key}) : super(key: key);

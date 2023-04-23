@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../chat_controller.dart';
-import '../widgets/app_bar_chat.dart';
-import '../widgets/arrow_scroll.dart';
-import '../widgets/bottom_bar_chat.dart';
-import '../widgets/chat_action_dialog.dart';
+import '../../../../data/models/model.dart';
+import '../../../core/core.dart';
+import '../../features.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);

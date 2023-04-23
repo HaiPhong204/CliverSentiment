@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import '../../../../../data/models/model.dart';
+import '../../../../../data/services/services.dart';
+import '../../../../common_widgets/common_widgets.dart';
+import '../../../../core/core.dart';
 
 class FilterDialog extends StatefulWidget {
   const FilterDialog(
@@ -273,7 +277,7 @@ class _FilterDialogState extends State<FilterDialog> {
                       },
                       onTap: () {
                         final RenderBox overlay = Overlay.of(context)
-                            ?.context
+                            .context
                             .findRenderObject() as RenderBox;
                         showMenu(
                           context: context,
@@ -362,7 +366,7 @@ class _FilterDialogState extends State<FilterDialog> {
                         },
                         onTap: () {
                           final RenderBox overlay = Overlay.of(context)
-                              ?.context
+                              .context
                               .findRenderObject() as RenderBox;
                           showMenu(
                             context: context,
@@ -576,7 +580,7 @@ class _FilterDialogState extends State<FilterDialog> {
                               },
                               onTap: () {
                                 final RenderBox overlay = Overlay.of(context)
-                                    ?.context
+                                    .context
                                     .findRenderObject() as RenderBox;
                                 showMenu(
                                   context: context,

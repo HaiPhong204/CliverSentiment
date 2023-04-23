@@ -1,7 +1,9 @@
+import '../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../earning/earning_controller.dart';
+import '../../../common_widgets/common_widgets.dart';
+import '../../../controller/controller.dart';
+import '../../features.dart';
 
 class SellerHome extends StatefulWidget {
   const SellerHome({Key? key}) : super(key: key);
@@ -12,7 +14,6 @@ class SellerHome extends StatefulWidget {
 
 class _SellerHomeState extends State<SellerHome> {
   final UserController _userController = Get.find();
-  final _earningController = Get.put(EarningController())..getEarningData();
 
   @override
   Widget build(BuildContext context) {

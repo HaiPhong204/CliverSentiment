@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../../../common_widgets/custom_bottom_navigation_bar.dart';
 import '../../../../../../core/values/app_colors.dart';
-import '../../../controller/post_controller.dart';
+import '../../../../../features.dart';
 
 class AddPostScreen extends StatefulWidget {
   const AddPostScreen({Key? key}) : super(key: key);

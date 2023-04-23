@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/utils/utils.dart';
+import '../../../../../data/models/model.dart';
+import '../../../../common_widgets/common_widgets.dart';
+import '../../../../core/core.dart';
+import '../../../features.dart';
 
 class PostRecentlyView extends StatefulWidget {
   const PostRecentlyView({Key? key, required this.postRecent, this.onChangedStatus, this.onTap, this.getPostsRecent}) : super(key: key);

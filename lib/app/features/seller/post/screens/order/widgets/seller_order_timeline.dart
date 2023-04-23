@@ -2,15 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-
-import '../../../../../../../data/enums/review_type.dart';
-import '../../../../../../../data/enums/status.dart';
-import '../../../../../../../data/models/order_history.dart';
-import '../../../../../../../data/models/resource.dart';
+import '../../../../../../../data/enums/enums.dart';
+import '../../../../../../../data/models/model.dart';
 import '../../../../../../core/utils/utils.dart';
 import '../../../../../../core/values/app_colors.dart';
-import '../../../../../buyer/order/widgets/stepper_item.dart';
-import '../../../../../chat/widgets/button_icon.dart';
+import '../../../../../features.dart';
 
 class SellerOrderTimeline extends StatefulWidget {
   const SellerOrderTimeline({super.key, required this.order});

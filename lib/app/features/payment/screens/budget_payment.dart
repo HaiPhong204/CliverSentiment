@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../core/values/app_colors.dart';
+import '../../../controller/controller.dart';
+import '../../../core/core.dart';
+import '../../features.dart';
 
 class BudgetPayment extends StatefulWidget {
   const BudgetPayment({super.key});

@@ -1,7 +1,9 @@
+import '../../../../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import '../../../../../../../data/models/post.dart';
+import '../../../../../../../data/services/services.dart';
 
 class ManagePostController extends GetxController {
   var myPostList = <Post>[].obs;

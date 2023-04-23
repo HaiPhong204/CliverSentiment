@@ -1,12 +1,14 @@
+import 'package:CliverSentiment/app/core/core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-
 import '../../../../data/enums/screen.dart';
-import '../../../core/values/app_colors.dart';
+import '../../../../data/models/model.dart';
+import '../../../controller/controller.dart';
 import '../../../routes/routes.dart';
+import '../../features.dart';
 
 class RoomItem extends StatelessWidget {
   RoomItem({

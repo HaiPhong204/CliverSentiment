@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
-import '../seller/home/seller_home.dart';
-import '../seller/post/screens/main_page.dart';
-import '../setting/screens/main_screen.dart';
+import '../features.dart';
 
 class BottomBarController extends GetxController {
   var currentIndex = 0.obs;

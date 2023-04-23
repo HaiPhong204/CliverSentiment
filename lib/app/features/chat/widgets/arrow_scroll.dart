@@ -1,8 +1,8 @@
 import 'dart:math' as math;
+import '../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../core/values/app_colors.dart';
+import '../../features.dart';
 
 class ArrowScroll extends StatelessWidget {
   final Function scrollToEnd;

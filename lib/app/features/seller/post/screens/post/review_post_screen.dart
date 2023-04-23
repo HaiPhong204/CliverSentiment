@@ -1,7 +1,5 @@
-import '../../../../../core/utils/size_config.dart';
-import '../../../../../core/values/app_colors.dart';
-import 'controller/review_controller.dart';
-import '../../widgets/post/post_review_item.dart';
+import '../../../../../core/core.dart';
+import '../../../../features.dart';
 import '../../../../../../data/models/model.dart';
 import '../../../../../../data/services/services.dart';
 import 'package:flutter/material.dart';

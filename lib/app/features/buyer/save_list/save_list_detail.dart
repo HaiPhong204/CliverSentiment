@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import '../../../../data/models/model.dart';
+import '../../../../data/services/services.dart';
+import '../../../common_widgets/common_widgets.dart';
 import '../../../controller/user_controller.dart';
+import '../../../core/core.dart';
+import '../../../routes/routes.dart';
+import '../../features.dart';
 
 class SaveListDetail extends StatefulWidget {
   const SaveListDetail({Key? key}) : super(key: key);

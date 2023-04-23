@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../buyer/order/widgets/card_order_detail.dart';
-import '../seller_order_controller.dart';
+import '../../../../../../../data/models/model.dart';
+import '../../../../../features.dart';
 
 class SellerOrderDetail extends StatefulWidget {
   const SellerOrderDetail({Key? key}) : super(key: key);

@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-
+import '../../../../../../../data/models/model.dart';
+import '../../../../../../../data/services/services.dart';
+import '../../../../../../core/core.dart';
+import '../../../../../../routes/routes.dart';
 import '../../../controller/post_controller.dart';
 
 class Step4 extends StatefulWidget {

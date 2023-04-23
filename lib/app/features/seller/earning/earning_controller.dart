@@ -1,7 +1,7 @@
+import '../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-
 import '../../../../data/models/analytics.dart';
 import '../../../../data/models/revenues.dart';
 import '../../../../data/services/AuthService.dart';

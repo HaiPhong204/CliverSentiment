@@ -1,5 +1,5 @@
 import '../../../../../controller/user_controller.dart';
-import '../../../../../core/utils/size_config.dart';
+import '../../../../../core/core.dart';
 import '../../widgets/post/post_review_item.dart';
 import '../../../../../../data/models/model.dart';
 import '../../../../../../data/services/services.dart';

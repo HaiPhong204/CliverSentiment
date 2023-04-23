@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../common_widgets/common_widgets.dart';
 import '../../../controller/auth/signup_controller.dart';
 
 class EnterPassScreen extends StatefulWidget {

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import '../../../../../../../data/models/model.dart';
+import '../../../../../../../data/services/services.dart';
+import '../../../../../../core/core.dart';
+import '../../../../../features.dart';
 
 class Step2_3pack extends StatefulWidget {
   const Step2_3pack({Key? key}) : super(key: key);

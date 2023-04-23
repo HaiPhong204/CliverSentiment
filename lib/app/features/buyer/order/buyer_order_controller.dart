@@ -1,17 +1,17 @@
 import 'dart:developer';
+import '../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:ezjob/data/enums/action.dart' as Action;
+import '../../../../data/enums/action.dart' as Action;
 import 'package:path_provider/path_provider.dart';
 import '../../../../data/enums/status.dart';
 import '../../../../data/models/model.dart';
-import '../../../../data/models/order_action.dart';
+import '../../../../data/services/services.dart';
 import '../../../routes/routes.dart';
-import '../../bottom_navigation_bar/bottom_bar_controller.dart';
-import '../../payment/screens/webview_screen.dart';
+import '../../features.dart';
 
 class BuyerOrderController extends GetxController {
   RxList<Order> orders = <Order>[].obs;
