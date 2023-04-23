@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../core/core.dart';
+import '../features/seller/post/controller/controller.dart';
+import '../features/seller/post/screens/post/post.dart';
+import '../routes/routes.dart';
 import 'loading_container.dart';
 
 class BuyerViewSellerPostScreen extends StatefulWidget {
