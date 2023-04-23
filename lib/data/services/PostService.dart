@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:get/get.dart';
+import '../../app/controller/controller.dart';
 import '../../app/core/values/strings.dart';
 import '../models/post.dart';
+import '../../app/core/core.dart';
 
 class PostService extends GetConnect {
   PostService._initInstance();

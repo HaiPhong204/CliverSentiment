@@ -6,4 +6,3 @@ export 'post_detail.dart';
 export 'review_post_screen.dart';
 export 'review_user_screen.dart';
 export 'seller_post.dart';
-export 'review_screen.dart';

@@ -1,13 +1,14 @@
 import 'dart:io';
+import '../../../../data/services/services.dart';
+import '../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../app_credit/app_credit_screen.dart';
-import '../../buyer/my_request/main_screen.dart';
-import '../../seller/buyer_request/buyer_request_screen.dart';
-import '../../seller/verify_seller/verify_seller_screen.dart';
+import '../../../controller/controller.dart';
+import '../../../routes/routes.dart';
+import '../../features.dart';
 
 class ProfileSettingScreen extends StatefulWidget {
   const ProfileSettingScreen({Key? key}) : super(key: key);

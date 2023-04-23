@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import '../enums/action.dart';
+import 'model.dart';
 part 'order_action.g.dart';
 
 @JsonSerializable(explicitToJson: true)

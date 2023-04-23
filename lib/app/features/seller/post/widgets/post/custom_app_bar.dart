@@ -2,6 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../common_widgets/common_widgets.dart';
+import '../../../../../core/core.dart';
+import '../../../../features.dart';
+
 class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   CustomSliverAppBarDelegate({
     required this.expandedHeight,

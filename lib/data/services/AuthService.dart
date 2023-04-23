@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:get/get_connect/connect.dart';
-
+import '../../app/core/core.dart';
 import '../models/user.dart';
 
 class AuthService extends GetConnect {

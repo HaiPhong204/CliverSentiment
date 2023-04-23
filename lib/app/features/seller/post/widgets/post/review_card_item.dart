@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../../data/models/model.dart';
+import '../../../../../common_widgets/common_widgets.dart';
+import '../../../../../core/core.dart';
+
 class CustomReviewCardItem extends StatefulWidget {
   final Review review;
   const CustomReviewCardItem({Key? key, required this.review})

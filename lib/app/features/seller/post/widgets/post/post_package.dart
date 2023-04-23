@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../../data/models/model.dart';
+import '../../../../../core/core.dart';
 import '../../../../../routes/routes.dart';
+import '../../../../features.dart';
 
 class PostPackage extends StatefulWidget {
   const PostPackage({Key? key, this.package, required this.type, this.canBuy})

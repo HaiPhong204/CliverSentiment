@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import '../features/features.dart';
 import 'routes.dart';
 
 //routes navigation

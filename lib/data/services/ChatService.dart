@@ -1,6 +1,7 @@
 import 'dart:developer';
 import '../../app/controller/user_controller.dart';
 import 'package:get/get.dart';
+import '../../app/core/core.dart';
 
 class ChatService extends GetConnect {
   static final ChatService ins = ChatService._initInstance();

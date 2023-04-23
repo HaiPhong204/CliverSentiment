@@ -1,10 +1,11 @@
 import 'dart:io';
+import 'package:CliverSentiment/app/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-
-import '../../../core/values/app_colors.dart';
+import '../../../../data/services/services.dart';
+import '../../../controller/controller.dart';
 
 class VerifySellerScreen extends StatefulWidget {
   const VerifySellerScreen({Key? key}) : super(key: key);

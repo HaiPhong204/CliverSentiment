@@ -3,8 +3,9 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
-
 import '../../../../../data/models/model.dart';
+import '../../../../common_widgets/common_widgets.dart';
+import '../../../../core/core.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key, required this.user, this.onSave}) : super(key: key);
@@ -51,7 +52,7 @@ class _EditProfileState extends State<EditProfile> {
       appBar: AppBar(
         title: Text(
           'Edit Profile',
-          style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
         elevation: 0,

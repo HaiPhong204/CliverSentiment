@@ -1,4 +1,7 @@
 import 'package:get/get.dart';
+import '../../app/controller/controller.dart';
+import '../../app/core/core.dart';
+import '../models/model.dart';
 
 class UserService extends GetConnect {
   UserService._initInstance();

@@ -3,9 +3,12 @@ import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:logging/src/logger.dart';
 import 'package:signalr_netcore/signalr_client.dart' as signalr;
+import '../../app/controller/controller.dart';
 import '../../app/features/bottom_navigation_bar/bottom_bar_controller.dart';
 import '../../app/features/chat/chat_controller.dart';
 import '../enums/screen.dart';
+import '../models/model.dart';
+import 'services.dart';
 
 class SignalRService {
   static const _chatURL = "https://cliverapi.azurewebsites.net/hubs/chat";

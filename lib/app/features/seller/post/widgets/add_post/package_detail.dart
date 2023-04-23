@@ -1,6 +1,7 @@
+import '../../../../../core/core.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-
+import '../../../../../common_widgets/common_widgets.dart';
 import '../../controller/post_controller.dart';
 
 class PackageDetail extends StatefulWidget {
