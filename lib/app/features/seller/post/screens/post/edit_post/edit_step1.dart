@@ -166,12 +166,12 @@ class _EditStep1State extends State<EditStep1> {
                             focusNode: fn,
                             decoration: InputDecoration(
                               isDense: true,
-                              border: const OutlineInputBorder(
+                              border: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   width: 1.0,
                                 ),
                               ),
-                              focusedBorder: const OutlineInputBorder(
+                              focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   width: 1.0,
                                 ),

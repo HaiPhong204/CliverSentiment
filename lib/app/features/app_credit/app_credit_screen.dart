@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-
 import '../../../data/models/model.dart';
 import '../../controller/user_controller.dart';
 import '../../core/utils/utils.dart';
@@ -19,7 +18,6 @@ class InAppCreditScreen extends StatefulWidget {
 class _InAppCreditScreenState extends State<InAppCreditScreen> {
   final _controller = Get.put(CreditController())..getData();
   double myOpac = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

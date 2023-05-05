@@ -6,9 +6,9 @@ import '../../core/core.dart';
 import '../../routes/routes.dart';
 import 'widgets/buildPage.dart';
 
+
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
-
   @override
   State<OnBoarding> createState() => _OnBoardingState();
 }

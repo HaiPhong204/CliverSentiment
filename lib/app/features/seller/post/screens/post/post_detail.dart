@@ -145,7 +145,7 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
                                 isScrollControlled: true,
                                 context: context,
                                 backgroundColor: AppColors.primaryWhite,
-                                shape: const RoundedRectangleBorder(
+                                shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(10),
                                       topRight: Radius.circular(10)),

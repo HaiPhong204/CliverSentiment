@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../data/models/model.dart';
 import '../../../core/core.dart';
-import '../../../core/utils/utils.dart';
 import 'controller/buyer_request_controller.dart';
 
 class BuyerRequestScreen extends StatelessWidget {
@@ -134,7 +133,7 @@ class BuyerRequestScreen extends StatelessWidget {
                 TextField(
                   decoration: InputDecoration(
                     hintText: "Give your best offer...",
-                    border: const OutlineInputBorder(
+                    border: OutlineInputBorder(
                       borderSide: BorderSide(width: 1),
                     ),
                     contentPadding: const EdgeInsets.all(10),

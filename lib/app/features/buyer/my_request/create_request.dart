@@ -235,7 +235,7 @@ class CreateRequestScreen extends StatelessWidget {
             focusNode: fn,
             decoration: InputDecoration(
               isDense: true,
-              border: const OutlineInputBorder(borderSide: BorderSide.none),
+              border: OutlineInputBorder(borderSide: BorderSide.none),
               hintText: _controller.tagController.hasTags
                   ? ''
                   : "${'Enter tag'.tr}...",

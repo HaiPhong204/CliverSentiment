@@ -82,7 +82,7 @@ class _SellerOrderScreenState extends State<SellerOrderScreen> {
   void showBottom() {
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(20),
         ),

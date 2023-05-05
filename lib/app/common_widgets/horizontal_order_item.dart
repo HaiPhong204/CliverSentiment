@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 
 import '../../data/models/model.dart';
 import '../core/core.dart';
-import '../core/values/app_colors.dart';
 import '../features/bottom_navigation_bar/bottom_navigation_bar.dart';
 
 class HorizontalOrderItem extends StatelessWidget {
@@ -27,7 +26,7 @@ class HorizontalOrderItem extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 10),
         color: AppColors.primaryWhite,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(7.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

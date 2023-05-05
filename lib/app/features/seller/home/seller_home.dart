@@ -144,7 +144,7 @@ class _SellerHomeState extends State<SellerHome> {
                       ),
                     ),
                   ),
-                  CustomExpanded(),
+                  const CustomExpanded(),
                 ],
               ),
 

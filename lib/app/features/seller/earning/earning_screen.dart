@@ -268,7 +268,7 @@ class _EarningScreenState extends State<EarningScreen> {
           Text("Input the amount you want to draw".tr),
           const SizedBox(height: 10),
           TextField(
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(horizontal: 10),
               border: OutlineInputBorder(),
             ),

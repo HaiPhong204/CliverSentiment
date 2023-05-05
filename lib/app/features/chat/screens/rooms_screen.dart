@@ -60,9 +60,9 @@ class _RoomScreenState extends State<RoomScreen> {
                     context: context,
                     isScrollControlled: true,
                     isDismissible: true,
-                    shape: const RoundedRectangleBorder(
+                    shape: RoundedRectangleBorder(
                         borderRadius:
-                            BorderRadius.vertical(top: Radius.circular(20))),
+                            BorderRadius.vertical(top: const Radius.circular(20))),
                     builder: (context) => DraggableScrollableSheet(
                       initialChildSize: 0.4,
                       maxChildSize: 0.5,
@@ -122,10 +122,10 @@ class _RoomScreenState extends State<RoomScreen> {
         bottomNavigationBar: Obx(() => Visibility(
               visible: chatController.isEditted.value,
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                    top: BorderSide(
+                    top: const BorderSide(
                       color: Colors.grey,
                       width: 1,
                     ),

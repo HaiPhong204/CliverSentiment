@@ -106,7 +106,7 @@ class _PostDetailBodyState extends State<PostDetailBody>
 
         //REVIEW AREA
         Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             border: Border(
               top: BorderSide(width: 0.5, color: Colors.grey),
             ),

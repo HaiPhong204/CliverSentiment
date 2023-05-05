@@ -128,7 +128,7 @@ class _ListPostScreenState extends State<ListPostScreen> {
   void showBottom() {
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(20),
         ),

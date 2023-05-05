@@ -168,7 +168,7 @@ class _PostReviewScreenState extends State<PostReviewScreen> {
                       )),
                   const SizedBox(height: 20),
                   Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       border: Border(
                         top: BorderSide(width: 0.5, color: Colors.grey),
                       ),
@@ -195,7 +195,7 @@ class _PostReviewScreenState extends State<PostReviewScreen> {
   void showBottom(context) {
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(20),
         ),

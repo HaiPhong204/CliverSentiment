@@ -150,8 +150,8 @@ class _SaveListDetailState extends State<SaveListDetail> {
                           isScrollControlled: true,
                           context: context,
                           backgroundColor: AppColors.primaryWhite,
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 topRight: Radius.circular(10)),
                           ),

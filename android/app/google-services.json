@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "852815831189",
-    "project_id": "cliver-beta",
-    "storage_bucket": "cliver-beta.appspot.com"
+    "project_number": "706688042447",
+    "project_id": "cliver-moblie-app",
+    "storage_bucket": "cliver-moblie-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:852815831189:android:744545f39674b79b603b9c",
+        "mobilesdk_app_id": "1:706688042447:android:67355dad4102253e973eba",
         "android_client_info": {
-          "package_name": "com.example.cliver_mobile_beta"
+          "package_name": "com.example.cliver_sentiment"
         }
       },
       "oauth_client": [
         {
-          "client_id": "852815831189-nqds1gsq6v25co7qvqbfmo951hhimdk4.apps.googleusercontent.com",
+          "client_id": "706688042447-1l69fd8rc3th4cihqbhtpjgt1srgm57d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAiqKaGKd2GB5MpDArMx57weBZ6aZDclWs"
+          "current_key": "AIzaSyCGBnvWQW_BhQWAxbhbQsX66SCCZOly-sI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "852815831189-nqds1gsq6v25co7qvqbfmo951hhimdk4.apps.googleusercontent.com",
+              "client_id": "706688042447-1l69fd8rc3th4cihqbhtpjgt1srgm57d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

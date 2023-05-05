@@ -136,7 +136,7 @@ class RoomItem extends StatelessWidget {
                             onChanged: (value) {
                               chatController.listCheckBoxValue[index] = value!;
                             },
-                            shape: const CircleBorder(),
+                            shape: CircleBorder(),
                             fillColor:
                                 (!chatController.listCheckBoxValue[index])
                                     ? MaterialStateProperty.all(
@@ -267,7 +267,7 @@ class RoomItem extends StatelessWidget {
                           onChanged: (value) {
                             chatController.listCheckBoxValue[index] = value!;
                           },
-                          shape: const CircleBorder(),
+                          shape: CircleBorder(),
                           fillColor: (!chatController.listCheckBoxValue[index])
                               ? MaterialStateProperty.all(
                                   AppColors.lightGreyColor)

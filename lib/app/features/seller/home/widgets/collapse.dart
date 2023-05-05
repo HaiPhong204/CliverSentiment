@@ -13,7 +13,7 @@ class _myCollapseBarState extends State<myCollapseBar> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Color(0xff2A2B2E),
         border: Border(
           top: BorderSide(width: 0.2, color: Colors.grey),

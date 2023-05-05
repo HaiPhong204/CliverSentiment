@@ -81,9 +81,9 @@ class _BottomSheetChatState extends State<BottomSheetChat> {
                             },
                             child: Container(
                               padding: const EdgeInsets.all(10),
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 border: Border(
-                                  bottom: BorderSide(
+                                  bottom: const BorderSide(
                                     width: 1,
                                     color: Colors.grey,
                                   ),

@@ -90,8 +90,8 @@ class _CategoryHistoryItemState extends State<CategoryHistoryItem> {
                         isScrollControlled: true,
                         context: context,
                         backgroundColor: AppColors.primaryWhite,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
                         ),
                         builder: (BuildContext context) {
                           return BottomSaveList(
