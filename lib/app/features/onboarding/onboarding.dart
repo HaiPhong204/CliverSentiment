@@ -41,17 +41,17 @@ class _OnBoardingState extends State<OnBoarding> {
                 controller: controller,
                 onPageChanged: enableSkipBtn,
                 children: [
-                  buildPage(
+                  BuildPage(
                     title: "Explore Jobs".tr,
                     image: "assets/images/board1.png",
                     des: "Discover jobs around the world\nwherever you are",
                   ),
-                  buildPage(
+                  BuildPage(
                       title: "Choose a Freelancer".tr,
                       image: "assets/images/board2.png",
                       des:
                           "Select a guy for your needs easily\nand know the exact cost of the job"),
-                  buildPage(
+                  BuildPage(
                       title: "World Wide Communication".tr,
                       image: "assets/images/board3.png",
                       des: "Finally, get ready because we work really fast"),
