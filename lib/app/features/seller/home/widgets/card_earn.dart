@@ -9,7 +9,7 @@ class cardEarn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final earningController = Get.find<EarningController>();
+    final earningController = Get.put(EarningController());
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
