@@ -29,6 +29,13 @@
             {
               "client_id": "706688042447-1l69fd8rc3th4cihqbhtpjgt1srgm57d.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "706688042447-1nhth02qkm7klmecpkkm2g4vjpr0j756.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cliver"
+              }
             }
           ]
         }

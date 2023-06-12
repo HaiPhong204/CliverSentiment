@@ -54,9 +54,9 @@ dependencies:
   json_annotation: ^4.7.0
   build_runner: ^2.2.1
   json_serializable: ^6.4.0
-  firebase_core: ^2.4.1
-  firebase_storage: ^11.0.10
-  firebase_auth: ^4.2.5
+  firebase_core: ^2.13.1
+  firebase_storage: ^11.2.2
+  firebase_auth: ^4.6.2
   shimmer: ^2.0.0
   assorted_layout_widgets: ^7.0.0
   flutter_local_notifications: ^13.0.0
