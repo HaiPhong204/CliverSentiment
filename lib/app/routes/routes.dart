@@ -21,6 +21,7 @@ const String searchRoute = '/search_screen';
 const String saveListRoute = '/save_list_screen';
 const String saveListDetailRoute = '/save_list_detail_screen';
 const String editPostScreenRoute = "/seller/post/edit_post";
+const String customerReviewScreenRoute = "/customer_review_screen";
 
 //order route name
 const String paymentMethodRoute = '/seller/post/post_detail/payment_method';

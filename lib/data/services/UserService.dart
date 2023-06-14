@@ -77,4 +77,14 @@ class UserService extends GetConnect {
       },
     );
   }
+
+  Future<Response> getReviewSentimentsById({required String id}) {
+    return get(
+      "$api_url/users/$id/reviews/sentiments",
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Authorization': userController.userToken,
+      },
+    );
+  }
 }

@@ -13,6 +13,7 @@ class Review {
   ReviewType? type;
   int? rating;
   DateTime? createdAt;
+  int? label;
   Review({
     this.id,
     this.orderId,
