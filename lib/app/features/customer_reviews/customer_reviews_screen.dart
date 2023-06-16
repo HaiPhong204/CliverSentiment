@@ -25,7 +25,6 @@ class _CustomerReviewsScreenState extends State<CustomerReviewsScreen> {
   List<String> filterSentiment = [
     'All'.tr,
     'Negative'.tr,
-    'Normal'.tr,
     'Positive'.tr,
   ];
   String itemSelected = 'All'.tr;
@@ -60,20 +59,16 @@ class _CustomerReviewsScreenState extends State<CustomerReviewsScreen> {
   Widget build(BuildContext context) {
     double label0 = 0;
     double label1 = 0;
-    double label2 = 0;
     for (var element in reviewSentiment) {
       if (element.label == 0) {
         label0++;
-      } else if (element.label == 1) {
+      } else{
         label1++;
-      } else {
-        label2++;
       }
     }
     final dataMap = <String, double>{
       "Negative": label0,
-      "Normal": label1,
-      "Positive": label2
+      "Positive": label1
     };
     return isGetData
         ? Scaffold(

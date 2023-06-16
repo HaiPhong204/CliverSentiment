@@ -12,3 +12,4 @@ export 'NotificationService.dart';
 export 'OrderService.dart';
 export 'PaymentService.dart';
 export 'RequestService.dart';
+export 'SentimentService.dart';
