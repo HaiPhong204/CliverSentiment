@@ -67,8 +67,8 @@ class _CustomerReviewsScreenState extends State<CustomerReviewsScreen> {
       }
     }
     final dataMap = <String, double>{
-      "Negative": label0,
-      "Positive": label1
+      "Positive".tr: label1 * 100 / reviewSentiment.length,
+      "Negative".tr: label0 * 100/ reviewSentiment.length,
     };
     return isGetData
         ? Scaffold(

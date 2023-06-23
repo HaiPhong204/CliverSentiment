@@ -106,5 +106,9 @@ class AppPages {
         name: customerReviewScreenRoute,
         page: () => const CustomerReviewsScreen(),
         transition: Transition.rightToLeft),
+    GetPage(
+        name: sellerPostHomeScreenRoute,
+        page: () => const SellerPostHomeScreen(),
+        transition: Transition.rightToLeft),
   ];
 }

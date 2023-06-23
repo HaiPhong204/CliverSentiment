@@ -21,7 +21,7 @@ class AuthService extends GetConnect {
   }) async {
     return await post(
       "$api_url/auth/register",
-      jsonEncode(user),
+      user.toJson(),
     );
   }
 
