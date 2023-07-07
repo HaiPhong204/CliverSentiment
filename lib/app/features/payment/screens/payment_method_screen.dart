@@ -21,14 +21,12 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     if (isCustomPackage) {
       paymentController = Get.put(PaymentController());
       paymentController.post = Get.arguments[2];
-      paymentController.order = Get.arguments[4];
     } else {
       paymentController = Get.find<PaymentController>();
     }
     paymentController.isContinueOrder = Get.arguments[3];
-
     paymentController.package = Get.arguments[0];
-
+    paymentController.order = Get.arguments[4];
     super.initState();
   }
 

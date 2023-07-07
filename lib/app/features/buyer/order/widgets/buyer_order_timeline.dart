@@ -115,14 +115,13 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
                       ),
                       onPressed: () async {
                         Post post = Post();
-                        SimplePost simplePost =
-                            order.value.package?.post as SimplePost;
+                        SimplePost? simplePost =
+                            order.value.package?.post ;
                         // convert simple post to post
-                        post.title = simplePost.title;
-                        post.description = simplePost.description;
-                        post.userId = simplePost.userId;
-                        post.images = simplePost.images;
-
+                        post.title = simplePost?.title;
+                        post.description = simplePost?.description;
+                        post.userId = simplePost?.userId;
+                        post.images = simplePost?.images;
                         await Get.toNamed(paymentMethodRoute, arguments: [
                           order.value.package,
                           true,

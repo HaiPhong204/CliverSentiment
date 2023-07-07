@@ -105,6 +105,7 @@ class PaymentController extends GetxController {
               createOrder:
                   CreateOrder(packageId: package?.id as int, note: ""));
         } else {
+          print(order?.id);
           res = await OrderService.ins
               .buyerContinuePaymentWithVNPay(orderId: order?.id as int);
         }

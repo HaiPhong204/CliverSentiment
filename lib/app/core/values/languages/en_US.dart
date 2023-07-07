@@ -234,7 +234,7 @@ const Map<String, String> enLanguagePackage = {
   "You left this buyer a": "You left this buyer a",
   "Please select a zip file": "Please select a zip file",
   "You have to wait for the buyer to agree":
-      "You have to wait for the seller to agree",
+      "You have to wait for the buyer to agree",
   "Offer Withdrawn": "Offer Withdrawn",
   'enterAllInformation': 'Please enter all the information',
   "Withdraw": "Withdraw",

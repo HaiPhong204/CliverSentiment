@@ -111,7 +111,7 @@ class _SaveListState extends State<SaveList> {
                                   );
                                 },
                                 errorBuilder: (_, __, ___) => Image.asset(
-                                  "assets/images/bg_default.png",
+                                  "assets/images/bg_default.jpg",
                                   height: getHeight(175),
                                   width: getWidth(
                                       MediaQuery.of(context).size.width),
