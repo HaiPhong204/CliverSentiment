@@ -22,11 +22,8 @@ class _Step1State extends State<Step1> {
   late List<Category> categoryList = [];
   late List<String> categoryNameList = [];
 
-  late List<SubCategory>? subCategoryList = [];
-  late List<String> subCategoryNameList = [];
-
   late String mainSelect = categoryNameList[0];
-  late String subSelect = subCategoryNameList[0];
+  late Category mainCategory;
 
   //LOGIC UI
   bool isGetData = true;
@@ -110,21 +107,6 @@ class _Step1State extends State<Step1> {
                               changeCategory(val!);
                             },
                             selectedItem: mainSelect,
-                          ),
-                        ),
-                        const Spacer(),
-                        SizedBox(
-                          width: context.screenSize.width * 0.45,
-                          child: DropdownSearch<String>(
-                            popupProps: const PopupProps.menu(
-                              showSelectedItems: true,
-                              showSearchBox: true,
-                            ),
-                            items: subCategoryNameList,
-                            onChanged: (val) {
-                              subSelect = val!;
-                            },
-                            selectedItem: subSelect,
                           ),
                         ),
                       ],
@@ -234,43 +216,31 @@ class _Step1State extends State<Step1> {
               const SizedBox(height: 80),
               ElevatedButton(
                 onPressed: () async {
-                  if (_controller.currentPost != null) {
-                    if (checkData()) {
-                      SubCategory subCate = subCategoryList!
-                          .firstWhere((element) => element.name == subSelect);
+                  if (checkData()) {
+                    var newPost = Post(
+                        title: titleCtrl.text,
+                        categoryId: mainCategory.id,
+                        tags: _tagController.getTags);
 
-                      var newPost = Post(
-                          title: titleCtrl.text,
-                          subcategoryId: subCate.id,
-                          tags: _tagController.getTags);
-
-                      EasyLoading.show();
-                      var res =
-                          await PostService.ins.createPost(myPost: newPost);
-                      EasyLoading.dismiss();
-                      if (res.isOk) {
-                        Map data = res.data;
-                        Post resPost = Post();
-                        resPost.id = data["id"];
-                        resPost.hasOfferPackages = false;
-                        _controller.currentPost = resPost;
-                        _stepController.currentIndex.value++;
-                      } else {
-                        print(res.body);
-                      }
+                    EasyLoading.show();
+                    var res =
+                        await PostService.ins.createPost(myPost: newPost);
+                    EasyLoading.dismiss();
+                    if (res.isOk) {
+                      Map data = res.data;
+                      Post resPost = Post();
+                      resPost.id = data["id"];
+                      resPost.hasOfferPackages = false;
+                      _controller.currentPost = resPost;
+                      _stepController.currentIndex.value++;
                     } else {
-                      EasyLoading.showToast('enterAllInformation'.tr,
-                          toastPosition: EasyLoadingToastPosition.bottom);
+                      print(res.body);
                     }
                   } else {
-                    EasyLoading.show();
-                    await PostService.ins
-                        .putPostStep(post: _controller.currentPost);
-                    EasyLoading.dismiss();
-                    _controller.currentPost.hasOfferPackages = false;
-                    _stepController.currentIndex.value++;
+                    EasyLoading.showToast('enterAllInformation'.tr,
+                        toastPosition: EasyLoadingToastPosition.bottom);
                   }
-                },
+                                },
                 child: const Text("Next"),
               ),
               const SizedBox(height: 20),
@@ -283,19 +253,15 @@ class _Step1State extends State<Step1> {
 
   void getAllCategory() async {
     EasyLoading.show();
-    var res = await CategoriesService.ins.getAllCategory();
+    var res = await CategoriesService.ins.getPopularCategory();
     if (res.isOk) {
       for (int i = 0; i < res.data.length; i++) {
         categoryList.add(Category.fromJson(res.data[i]));
         categoryNameList.add(Category.fromJson(res.data[i]).name!);
       }
-
-      subCategoryList = categoryList[0].subcategories;
-      for (int i = 0; i < subCategoryList!.length; i++) {
-        subCategoryNameList.add(subCategoryList![i].name!);
-      }
     }
     setState(() {
+      mainCategory = categoryList[0];
       isGetData = false;
     });
     EasyLoading.dismiss();
@@ -305,13 +271,8 @@ class _Step1State extends State<Step1> {
     mainSelect = val;
     for (int i = 0; i < categoryList.length; i++) {
       if (categoryList[i].name == val) {
-        subCategoryList = categoryList[i].subcategories;
-        subCategoryNameList.clear();
-        for (int m = 0; m < subCategoryList!.length; m++) {
-          subCategoryNameList.add(subCategoryList![m].name!);
-        }
         setState(() {
-          subSelect = subCategoryNameList[0];
+          mainCategory = categoryList[i];
         });
         return;
       }

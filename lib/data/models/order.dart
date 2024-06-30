@@ -11,10 +11,10 @@ class Order {
   int? price;
   String? note;
   String? dueBy;
-  String? buyerId;
-  User? buyer;
-  String? sellerId;
-  User? seller;
+  String? recruiterId;
+  User? recruiter;
+  String? candidateId;
+  User? candidate;
   int? revisionTimes;
   int? leftRevisionTimes;
   int? packageId;
@@ -30,10 +30,10 @@ class Order {
     this.price,
     this.note,
     this.dueBy,
-    this.buyerId,
-    this.buyer,
-    this.sellerId,
-    this.seller,
+    this.recruiterId,
+    this.recruiter,
+    this.candidateId,
+    this.candidate,
     this.revisionTimes,
     this.leftRevisionTimes,
     this.packageId,

@@ -100,15 +100,8 @@ class PaymentController extends GetxController {
       try {
         EasyLoading.show();
         Response res;
-        if (!isContinueOrder) {
-          res = await PaymentService.ins.getPaymentUrl(
-              createOrder:
-                  CreateOrder(packageId: package?.id as int, note: ""));
-        } else {
-          print(order?.id);
-          res = await OrderService.ins
-              .buyerContinuePaymentWithVNPay(orderId: order?.id as int);
-        }
+        res = await OrderService.ins
+            .buyerContinuePaymentWithVNPay(orderId: order?.id as int);
         EasyLoading.dismiss();
 
         if (res.isOk) {
@@ -158,14 +151,9 @@ class PaymentController extends GetxController {
     }
     EasyLoading.show();
     try {
-      Response res;
-      if (!isContinueOrder) {
-        res = await PaymentService.ins.orderWithBudget(
-            createOrder: CreateOrder(packageId: package?.id as int, note: ""));
-      } else {
-        res = await OrderService.ins
-            .buyerContinuePaymentWithBudget(orderId: order?.id as int);
-      }
+      print(order?.id);
+      var res = await OrderService.ins
+          .buyerContinuePaymentWithBudget(orderId: order?.id as int);
       EasyLoading.dismiss();
       if (res.isOk) {
         // order = Order.fromJson(res.body);
@@ -178,14 +166,11 @@ class PaymentController extends GetxController {
         Get.find<UserController>().currentUser.value.wallet?.balance =
             temp - (package?.price as int);
         //mua xong ok thì navigate qua order
-        if (!isContinueOrder) {
-          popAllToBottomBar();
-        } else {
-          Get.until((route) => Get.currentRoute == buyerOrderDetailScreenRoute);
-          var buyerOrderController = Get.find<BuyerOrderController>();
-          await buyerOrderController.getOrder(
-              orderId: buyerOrderController.order.value.id as int);
-        }
+        popAllToBottomBar();
+        // Get.until((route) => Get.currentRoute == buyerOrderDetailScreenRoute);
+        // var buyerOrderController = Get.find<BuyerOrderController>();
+        // await buyerOrderController.getOrder(
+        //     orderId: buyerOrderController.order.value.id as int);
       } else {
         Get.defaultDialog(
           title: "Error",

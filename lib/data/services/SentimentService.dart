@@ -10,7 +10,7 @@ class SentimentService extends GetConnect {
 
   Future<Response> getSentiment({required String text}) {
     return post(
-      api_sentiment,
+      api_recommend,
       [text],
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',

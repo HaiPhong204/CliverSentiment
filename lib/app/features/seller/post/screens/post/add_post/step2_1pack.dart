@@ -39,9 +39,9 @@ class _Step2_1packState extends State<Step2_1pack>
               bottom: BorderSide(width: 0.5, color: AppColors.primaryColor),
             ),
           ),
-          tabs: const [
+          tabs:[
             Tab(
-              text: "Basic",
+              text: "Basic".tr,
             ),
           ],
         ),

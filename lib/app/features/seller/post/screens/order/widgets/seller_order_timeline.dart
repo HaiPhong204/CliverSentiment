@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import '../../../../../../../data/enums/enums.dart';
 import '../../../../../../../data/models/model.dart';
+import '../../../../../../common_widgets/common_widgets.dart';
 import '../../../../../../core/utils/utils.dart';
 import '../../../../../../core/values/app_colors.dart';
+import '../../../../../../routes/routes.dart';
 import '../../../../../features.dart';
 
 class SellerOrderTimeline extends StatefulWidget {
@@ -53,6 +55,10 @@ class _SellerOrderTimelineState extends State<SellerOrderTimeline> {
               buildOrderDoing(doneTime: element.createdAt, isEnd: isEnd);
               break;
             case Status.Delivered:
+              // buildOrderDelivered(
+              //     deliveredTime: element.createdAt,
+              //     resource: element.resource,
+              //     isEnd: isEnd);
               buildOrderDelivered(
                   deliveredTime: element.createdAt,
                   resource: element.resource,
@@ -71,65 +77,103 @@ class _SellerOrderTimelineState extends State<SellerOrderTimeline> {
     );
   }
 
-  void buildStepper() {
-    sellerOrderController.isFirstDoing = true;
-    timeline.clear();
-    bool isEnd = false;
-    int index = 0;
-    for (var element in order.value.histories as List<OrderHistory>) {
-      if (index == order.value.histories!.length - 1) isEnd = true;
-      switch (element.status) {
-        case Status.Created:
-          buildOrderCreated(createdTime: element.createdAt);
-          break;
-        case Status.Doing:
-          buildOrderDoing(doneTime: element.createdAt, isEnd: isEnd);
-          break;
-        case Status.Delivered:
-          buildOrderDelivered(
-              deliveredTime: element.createdAt,
-              resource: element.resource,
-              isEnd: isEnd);
-          break;
-        case Status.Completed:
-          buildOrderCompleted(completedTime: element.createdAt);
-          break;
-        default:
-      }
-      index++;
-    }
-    if (sellerOrderController.orderStatus == Status.Cancelled) {
-      timeline.add(
-        Text(
-          "Canceled order".tr,
-          style: const TextStyle(
-            color: Colors.red,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      );
-    }
-  }
+  // void buildStepper() {
+  //   sellerOrderController.isFirstDoing = true;
+  //   timeline.clear();
+  //   bool isEnd = false;
+  //   int index = 0;
+  //   for (var element in order.value.histories as List<OrderHistory>) {
+  //     if (index == order.value.histories!.length - 1) isEnd = true;
+  //     switch (element.status) {
+  //       case Status.Created:
+  //         buildOrderCreated(createdTime: element.createdAt);
+  //         break;
+  //       case Status.Doing:
+  //         buildOrderDoing(doneTime: element.createdAt, isEnd: isEnd);
+  //         break;
+  //       case Status.Delivered:
+  //         buildOrderDelivered(
+  //             deliveredTime: element.createdAt,
+  //             resource: element.resource,
+  //             isEnd: isEnd);
+  //         break;
+  //       case Status.Completed:
+  //         buildOrderCompleted(completedTime: element.createdAt);
+  //         break;
+  //       default:
+  //     }
+  //     index++;
+  //   }
+  //   if (sellerOrderController.orderStatus == Status.Cancelled) {
+  //     timeline.add(
+  //       Text(
+  //         "Canceled order".tr,
+  //         style: const TextStyle(
+  //           color: Colors.red,
+  //           fontSize: 20,
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //     );
+  //   }
+  // }
 
-  void buildOrderPendingPayment({required DateTime? createdTime}) {
+  void buildOrderRequest({required DateTime? createdTime}) {
     timeline.add(
       StepperItem(
-        leading: Icons.pending_actions_outlined,
-        title: "Unpaid order".tr,
+        leading: Icons.start,
+        title: "${order.value.candidate?.name} ${'Order is established'.tr}",
         subtitle: (createdTime != null)
             ? f.format(FormatHelper().toLocal(createdTime) as DateTime)
             : "Get time by status null",
         color: Colors.blueAccent,
       ),
     );
+
+    if (sellerOrderController.orderStatus == Status.Created) {
+      timeline.add(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                    MaterialStateProperty.all(AppColors.primaryColor),
+                  ),
+                  onPressed: () => sellerOrderController.startMakingOrder(),
+                  child: Text(
+                    "Start".tr,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                  ),
+                  onPressed: () => sellerOrderController.cancelOrder(),
+                  child: Text(
+                    "cancel".tr,
+                    style: TextStyle(color: AppColors.primaryColor),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
   }
 
   void buildOrderCreated({required DateTime? createdTime}) {
     timeline.add(
       StepperItem(
         leading: Icons.start,
-        title: "${order.value.buyer?.name} ${'placed an order'.tr}",
+        title: "${order.value.candidate?.name} ${'placed an order'.tr}",
         subtitle: (createdTime != null)
             ? f.format(FormatHelper().toLocal(createdTime) as DateTime)
             : "Get time by status null",
@@ -177,14 +221,109 @@ class _SellerOrderTimelineState extends State<SellerOrderTimeline> {
   }
 
   void buildOrderDoing({required DateTime? doneTime, required bool isEnd}) {
+    // timeline.add(
+    //   StepperItem(
+    //     leading: sellerOrderController.isFirstDoing
+    //         ? Icons.rocket
+    //         : Icons.restart_alt,
+    //     title: (sellerOrderController.isFirstDoing)
+    //         ? "You have started work".tr
+    //         : "Reworked the order".tr,
+    //     subtitle: (doneTime != null)
+    //         ? f.format(FormatHelper().toLocal(doneTime) as DateTime)
+    //         : "Get time by status null",
+    //     color: Colors.green,
+    //   ),
+    // );
+    // sellerOrderController.isFirstDoing = false;
+    // if (isEnd) {
+    //   timeline.add(
+    //     Card(
+    //       child: SizedBox(
+    //         height: 50,
+    //         child: Padding(
+    //           padding: const EdgeInsets.symmetric(horizontal: 5),
+    //           child: Row(
+    //             children: [
+    //               const Icon(
+    //                 Icons.folder_zip,
+    //                 size: 30,
+    //                 color: Colors.yellowAccent,
+    //               ),
+    //               const SizedBox(width: 10),
+    //               Expanded(
+    //                 child: Obx(
+    //                   () => Text(
+    //                     "${sellerOrderController.fileName.value} ${sellerOrderController.fileSizeName.value}",
+    //                     maxLines: 2,
+    //                     overflow: TextOverflow.ellipsis,
+    //                     style: const TextStyle(
+    //                       color: Colors.black,
+    //                       fontSize: 14,
+    //                     ),
+    //                   ),
+    //                 ),
+    //               ),
+    //               GestureDetector(
+    //                 onTap: () => sellerOrderController.clearZipFile(),
+    //                 child: Container(
+    //                   padding: const EdgeInsets.all(2),
+    //                   decoration: BoxDecoration(
+    //                     color: Colors.redAccent.withOpacity(0.2),
+    //                     shape: BoxShape.circle,
+    //                   ),
+    //                   child: const Icon(
+    //                     Icons.close,
+    //                     color: Colors.redAccent,
+    //                   ),
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   );
+    //   timeline.add(
+    //     Padding(
+    //       padding: const EdgeInsets.symmetric(vertical: 10),
+    //       child: Row(
+    //         children: [
+    //           Expanded(
+    //             child: TextButton(
+    //               style: ButtonStyle(
+    //                 backgroundColor:
+    //                     MaterialStateProperty.all(AppColors.primaryColor),
+    //               ),
+    //               onPressed: () => sellerOrderController.deliveryOrder(),
+    //               child: Text(
+    //                 "Delivery".tr,
+    //                 style: const TextStyle(color: Colors.white),
+    //               ),
+    //             ),
+    //           ),
+    //           const SizedBox(width: 20),
+    //           SizedBox(
+    //             width: 50,
+    //             child: ButtonIcon(
+    //               icon: Icons.attach_file_outlined,
+    //               onPressed: () => sellerOrderController.pickZipFile(),
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //     ),
+    //   );
+    //   return;
+    // }
     timeline.add(
       StepperItem(
         leading: sellerOrderController.isFirstDoing
             ? Icons.rocket
             : Icons.restart_alt,
-        title: (sellerOrderController.isFirstDoing)
-            ? "You have started work".tr
-            : "Reworked the order".tr,
+        title: sellerOrderController.isFirstDoing
+            ? "The order started".tr
+            : "${order.value.candidate?.name} ${'reworked the order'.tr}",
         subtitle: (doneTime != null)
             ? f.format(FormatHelper().toLocal(doneTime) as DateTime)
             : "Get time by status null",
@@ -194,100 +333,102 @@ class _SellerOrderTimelineState extends State<SellerOrderTimeline> {
     sellerOrderController.isFirstDoing = false;
     if (isEnd) {
       timeline.add(
-        Card(
-          child: SizedBox(
-            height: 50,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Row(
-                children: [
-                  const Icon(
-                    Icons.folder_zip,
-                    size: 30,
-                    color: Colors.yellowAccent,
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Obx(
-                      () => Text(
-                        "${sellerOrderController.fileName.value} ${sellerOrderController.fileSizeName.value}",
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () => sellerOrderController.clearZipFile(),
-                    child: Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        color: Colors.redAccent.withOpacity(0.2),
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.close,
-                        color: Colors.redAccent,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Text(
+            "Your order is being processed".tr,
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
       );
-      timeline.add(
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Row(
-            children: [
-              Expanded(
-                child: TextButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(AppColors.primaryColor),
-                  ),
-                  onPressed: () => sellerOrderController.deliveryOrder(),
-                  child: Text(
-                    "Delivery".tr,
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-              const SizedBox(width: 20),
-              SizedBox(
-                width: 50,
-                child: ButtonIcon(
-                  icon: Icons.attach_file_outlined,
-                  onPressed: () => sellerOrderController.pickZipFile(),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-      return;
     }
   }
 
+  // void buildOrderDelivered(
+  //     {required DateTime? deliveredTime,
+  //     required Resource? resource,
+  //     required bool isEnd}) {
+  //   timeline.add(
+  //     StepperItem(
+  //         leading: Icons.inventory_2,
+  //         title: "You have delivered the order".tr,
+  //         subtitle: (deliveredTime != null)
+  //             ? f.format(FormatHelper().toLocal(deliveredTime) as DateTime)
+  //             : "Get time by status null",
+  //         color: Colors.pinkAccent),
+  //   );
+  //   if (resource != null) {
+  //     timeline.add(
+  //       Card(
+  //         child: Padding(
+  //           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+  //           child: Row(
+  //             children: [
+  //               const Icon(
+  //                 Icons.folder_zip,
+  //                 size: 30,
+  //                 color: Colors.yellowAccent,
+  //               ),
+  //               const SizedBox(width: 10),
+  //               Expanded(
+  //                 child: Text(
+  //                   resource.name.toString(),
+  //                   maxLines: 2,
+  //                   overflow: TextOverflow.ellipsis,
+  //                   style: const TextStyle(
+  //                     color: Colors.black,
+  //                     fontSize: 14,
+  //                   ),
+  //                 ),
+  //               ),
+  //               GestureDetector(
+  //                 onTap: () => sellerOrderController.downloadZip(
+  //                   url: resource.url.toString(),
+  //                   fileName: resource.name.toString(),
+  //                 ),
+  //                 child: const Icon(
+  //                   Icons.download,
+  //                   size: 30,
+  //                 ),
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     );
+  //   }
+  //   if (isEnd) {
+  //     timeline.add(
+  //       Text(
+  //         "You have to wait for the buyer to agree".tr,
+  //         style: const TextStyle(
+  //           color: Colors.red,
+  //           fontSize: 18,
+  //         ),
+  //       ),
+  //     );
+  //   }
+  // }
+
   void buildOrderDelivered(
       {required DateTime? deliveredTime,
-      required Resource? resource,
-      required bool isEnd}) {
+        required bool isEnd,
+        required Resource? resource}) {
+    String subtitle = (deliveredTime != null)
+        ? f.format(FormatHelper().toLocal(deliveredTime) as DateTime)
+        : "Get time by status null";
     timeline.add(
       StepperItem(
           leading: Icons.inventory_2,
-          title: "You have delivered the order".tr,
-          subtitle: (deliveredTime != null)
-              ? f.format(FormatHelper().toLocal(deliveredTime) as DateTime)
-              : "Get time by status null",
+          title: "${order.value.candidate?.name} ${'delivered the order'.tr}",
+          subtitle: subtitle,
           color: Colors.pinkAccent),
     );
-    if (resource != null) {
+    if (resource?.name != null) {
       timeline.add(
         Card(
           child: Padding(
@@ -302,7 +443,7 @@ class _SellerOrderTimelineState extends State<SellerOrderTimeline> {
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
-                    resource.name.toString(),
+                    resource?.name ?? "",
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
@@ -312,10 +453,7 @@ class _SellerOrderTimelineState extends State<SellerOrderTimeline> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => sellerOrderController.downloadZip(
-                    url: resource.url.toString(),
-                    fileName: resource.name.toString(),
-                  ),
+                  onTap: () => sellerOrderController.downloadZip(fileName: resource!.name!, url: resource.url!),
                   child: const Icon(
                     Icons.download,
                     size: 30,
@@ -328,16 +466,104 @@ class _SellerOrderTimelineState extends State<SellerOrderTimeline> {
       );
     }
     if (isEnd) {
-      timeline.add(
-        Text(
-          "You have to wait for the buyer to agree".tr,
-          style: const TextStyle(
-            color: Colors.red,
-            fontSize: 18,
+      if (order.value.leftRevisionTimes == 0) {
+        timeline.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                  MaterialStateProperty.all(AppColors.primaryColor),
+                ),
+                onPressed: () => sellerOrderController.acceptDeliveredOrder(),
+                child: Text(
+                  "Ok".tr,
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
           ),
-        ),
-      );
+        );
+      } else {
+        timeline.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all(AppColors.primaryColor),
+                    ),
+                    onPressed: () =>
+                        sellerOrderController.acceptDeliveredOrder(),
+                    child: Text(
+                      "Ok".tr,
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white),
+                    ),
+                    onPressed: () => sellerOrderController.denyDeliveredOrder(),
+                    child: Text("Rework".tr),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
     }
+  }
+
+
+  void buildOrderPendingPayment({required DateTime? createdTime}) {
+    timeline.add(
+      StepperItem(
+        leading: Icons.pending_actions_outlined,
+        title: "Unpaid order".tr,
+        subtitle: (createdTime != null)
+            ? f.format(FormatHelper().toLocal(createdTime) as DateTime)
+            : "Get time by status null",
+        color: Colors.blueAccent,
+      ),
+    );
+    timeline.add(
+      InkWellWrapper(
+        color: AppColors.primaryColor,
+        width: MediaQuery.of(context).size.width,
+        borderRadius: BorderRadius.circular(8),
+        paddingChild: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 10),
+        onTap: () async {
+          Get.toNamed(
+            paymentMethodRoute,
+            arguments: [
+              sellerOrderController.order.value.package,
+              false,
+              null,
+              false,
+              order.value
+            ],
+          );
+        },
+        child: Text(
+          "Payment ${sellerOrderController.order.value.price}",
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
   }
 
   void buildOrderCompleted({required DateTime? completedTime}) {
@@ -369,7 +595,7 @@ class _SellerOrderTimelineState extends State<SellerOrderTimeline> {
               StepperItem(
                   leading: Icons.star_rate_rounded,
                   title:
-                      "${order.value.buyer?.name} ${'gave you a'.tr} ${element.rating}-${'star review'.tr}",
+                      "${order.value.candidate?.name} ${'gave you a'.tr} ${element.rating}-${'star review'.tr}",
                   subtitle: element.comment,
                   color: Colors.amberAccent),
             );

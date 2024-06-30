@@ -91,43 +91,43 @@ class _PackageDetailState extends State<PackageDetail> {
                       fit: FlexFit.loose,
                     ),
                     items: const [
-                      "1 day",
-                      "2 days",
-                      "3 days",
-                      "5 days",
                       "1 week",
                       "2 weeks",
+                      "3 weeks",
+                      "1 month",
+                      "2 months",
+                      "3 months"
                     ],
                     onChanged: (val) {
                       switch (val) {
-                        case "1 day":
+                        case "1 week":
                           {
                             widget.packageController.deliveryDays = 1;
                             break;
                           }
-                        case "2 days":
+                        case "2 weeks":
                           {
                             widget.packageController.deliveryDays = 2;
                             break;
                           }
-                        case "3 days":
+                        case "3 weeks":
                           {
                             widget.packageController.deliveryDays = 3;
                             break;
                           }
-                        case "5 days":
+                        case "1 month":
                           {
-                            widget.packageController.deliveryDays = 5;
+                            widget.packageController.deliveryDays = 4;
                             break;
                           }
-                        case "1 week":
+                        case "2 months":
                           {
-                            widget.packageController.deliveryDays = 7;
+                            widget.packageController.deliveryDays = 8;
                             break;
                           }
-                        case "2 weeks":
+                        case "3 months":
                           {
-                            widget.packageController.deliveryDays = 14;
+                            widget.packageController.deliveryDays = 12;
                             break;
                           }
                       }
@@ -147,9 +147,9 @@ class _PackageDetailState extends State<PackageDetail> {
                     ),
                     items: const [
                       "No revision",
-                      "1 time",
-                      "2 times",
-                      "3 times",
+                      "3 time",
+                      "5 times",
+                      "10 times",
                     ],
                     onChanged: (val) {
                       switch (val) {

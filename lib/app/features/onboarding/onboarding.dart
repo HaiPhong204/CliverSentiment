@@ -44,17 +44,16 @@ class _OnBoardingState extends State<OnBoarding> {
                   BuildPage(
                     title: "Explore Jobs".tr,
                     image: "assets/images/board1.png",
-                    des: "Discover jobs around the world\nwherever you are",
+                    des: "Discover jobs".tr,
                   ),
                   BuildPage(
                       title: "Choose a Freelancer".tr,
                       image: "assets/images/board2.png",
-                      des:
-                          "Select a guy for your needs easily\nand know the exact cost of the job"),
+                      des: "Select jobs".tr),
                   BuildPage(
                       title: "World Wide Communication".tr,
                       image: "assets/images/board3.png",
-                      des: "Finally, get ready because we work really fast"),
+                      des: "Finally jobs".tr),
                 ],
               ),
               Positioned(
@@ -87,7 +86,7 @@ class _OnBoardingState extends State<OnBoarding> {
                         Get.offAllNamed(loginScreenRoute);
                       },
                       child: Text(
-                        "Let's go",
+                        "Let's go".tr,
                         style: TextStyle(
                           color: AppColors.primaryColor,
                           fontSize: 20,

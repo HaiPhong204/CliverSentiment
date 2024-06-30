@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/core.dart';
-import '../setting_controller.dart';
+import '../../../routes/routes.dart';
+import '../../features.dart';
 
 class PreferencesSettingScreen extends StatefulWidget {
-  const PreferencesSettingScreen({Key? key}) : super(key: key);
+  const PreferencesSettingScreen({super.key});
 
   @override
-  State<PreferencesSettingScreen> createState() =>
-      _PreferencesSettingScreenState();
+  State<PreferencesSettingScreen> createState() => _PreferencesSettingScreenState();
 }
 
 class _PreferencesSettingScreenState extends State<PreferencesSettingScreen> {
   late final SharedPreferences pref;
   final SettingController _controller = Get.find();
+  final _bottomBarController = Get.put(BottomBarController());
 
   @override
   void initState() {
@@ -41,10 +42,14 @@ class _PreferencesSettingScreenState extends State<PreferencesSettingScreen> {
                   () => SwitchListTile(
                     title: Text(
                       "Dark Mode".tr,
-                      style: const TextStyle(fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.primaryBlack,
+                      ),
                     ),
                     value: _controller.isDarkMode.value,
-                    onChanged: (value) => changeTheme(),
+                    onChanged: (value) =>
+                        showDialog(context: context, builder: (_) => _alertDialog()),
                     secondary: Icon(
                       Icons.nightlight_sharp,
                       color: AppColors.primaryColor,
@@ -58,7 +63,10 @@ class _PreferencesSettingScreenState extends State<PreferencesSettingScreen> {
                   ),
                   title: Text(
                     "Language".tr,
-                    style: const TextStyle(fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.primaryBlack,
+                    ),
                   ),
                   onTap: () => showLanguageDialog(context),
                 ),
@@ -80,11 +88,71 @@ class _PreferencesSettingScreenState extends State<PreferencesSettingScreen> {
       Get.changeTheme(AppColors().darkTheme);
       pref.setBool("isDark", true);
       _controller.isDarkMode.value = true;
+      _bottomBarController.currentIndex.value = 0;
+      Get.offAllNamed(myBottomBarRoute);
     } else {
       AppColors().changeColor(false);
       Get.changeTheme(AppColors().lightTheme);
       pref.setBool("isDark", false);
       _controller.isDarkMode.value = false;
+      _bottomBarController.currentIndex.value = 0;
+      Get.offAllNamed(myBottomBarRoute);
     }
+  }
+
+  _alertDialog() {
+    return AlertDialog(
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TweenAnimationBuilder(
+            curve: Curves.bounceOut,
+            duration: const Duration(milliseconds: 1000),
+            tween: Tween<Size>(begin: const Size(5, 5), end: MediaQuery.of(context).size),
+            builder: (BuildContext context, dynamic value, Widget? child) {
+              return Text(
+                "Warning".tr,
+                style: TextStyle(
+                  color: Colors.orange.withOpacity(0.7),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              );
+            },
+          ),
+          Text(
+            "switch mode".tr,
+            style: TextStyle(
+              color: AppColors.primaryColor,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          child: Text(
+            'Yes'.tr,
+            style: TextStyle(
+              color: Colors.orange.withOpacity(0.7),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          onPressed: () => changeTheme(),
+        ),
+        TextButton(
+          child: Text(
+            'Cancel'.tr,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
   }
 }

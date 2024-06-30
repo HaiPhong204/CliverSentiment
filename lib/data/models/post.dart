@@ -7,10 +7,12 @@ class Post {
   int? id;
   String? title;
   String? description;
+  String? requirement;
   String? userId;
   String? status;
   User? user;
   int? subcategoryId;
+  int? categoryId;
   Category? category;
   List<String>? tags;
   List<String>? images;
@@ -33,9 +35,11 @@ class Post {
       this.id,
       this.title,
       this.description,
+      this.requirement,
       this.userId,
       this.status,
       this.subcategoryId,
+      this.categoryId,
       this.category,
       this.tags,
       this.images,

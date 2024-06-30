@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../../../data/models/model.dart';
+import '../../../../../../../data/services/services.dart';
 import '../../../../../features.dart';
 
 class SellerOrderDetail extends StatefulWidget {
-  const SellerOrderDetail({Key? key}) : super(key: key);
+  const SellerOrderDetail({super.key});
 
   @override
   State<SellerOrderDetail> createState() => _SellerOrderDetailState();
@@ -13,11 +14,24 @@ class SellerOrderDetail extends StatefulWidget {
 
 class _SellerOrderDetailState extends State<SellerOrderDetail> {
   final orderId = Get.arguments[0];
+  final postId = Get.arguments[1];
   final orderController = Get.find<SellerOrderController>();
+  final _paymentController = Get.put(PaymentController());
 
   @override
   void initState() {
     super.initState();
+    getPostByID();
+  }
+
+  Future<void> getPostByID() async {
+    var res = await PostService.ins.getPostById(id: postId);
+    if (res.isOk) {
+      if (res.body["data"] != null) {
+        var post = Post.fromJson(res.body['data']);
+        _paymentController.post = post;
+      }
+    }
   }
 
   @override
@@ -39,6 +53,7 @@ class _SellerOrderDetailState extends State<SellerOrderDetail> {
             if (snapshot.data == null) {
               return const Center(child: Text("Server error"));
             }
+            _paymentController.order = snapshot.data as Order;
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: SingleChildScrollView(

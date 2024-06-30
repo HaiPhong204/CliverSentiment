@@ -6,4 +6,5 @@ enum Action {
   Delivery,
   Receive,
   Revision,
+  Payment
 }

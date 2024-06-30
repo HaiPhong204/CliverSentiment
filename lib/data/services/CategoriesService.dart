@@ -18,7 +18,7 @@ class CategoriesService extends GetConnect {
 
   Future<Response> getPopularCategory() {
     return get(
-      "$api_url/categories/popular",
+      "$api_url/categories/Category",
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

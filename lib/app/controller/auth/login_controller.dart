@@ -43,14 +43,14 @@ class LoginController extends GetxController {
         Get.offAllNamed(myBottomBarRoute);
       } else {
         Get.defaultDialog(
-          title: "Error",
+          title: "Error".tr,
           content: Text(res.error),
         );
       }
     } else {
       Get.defaultDialog(
-        title: "Error",
-        content: Text(res.error),
+        title: "Error".tr,
+        content: Text(res.error.tr),
       );
     }
   }

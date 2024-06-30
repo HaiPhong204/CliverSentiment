@@ -253,7 +253,7 @@ class _MessageCustomOrderState extends State<MessageCustomOrder> {
                 post.userId = simplePost.userId;
                 post.images = simplePost.images;
                 Get.toNamed(paymentMethodRoute,
-                    arguments: [package, true, post, false]);
+                    arguments: [package, true, post, false, null]);
               },
               style: ButtonStyle(
                   backgroundColor:

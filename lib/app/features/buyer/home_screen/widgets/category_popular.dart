@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import '../../../../../data/models/model.dart';
 import '../../../../common_widgets/common_widgets.dart';
 import '../../../../core/core.dart';
+
 class CategoryPopular extends StatefulWidget {
-  const CategoryPopular({Key? key, required this.subCategory, this.onTap}) : super(key: key);
-  final SubCategory subCategory;
+  const CategoryPopular({super.key, required this.category, this.onTap});
+
+  final Category category;
   final void Function()? onTap;
 
   @override
@@ -38,12 +40,31 @@ class _CategoryPopularState extends State<CategoryPopular> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-              borderRadius: const BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-              child: Image.network(widget.subCategory.icon ?? "", fit: BoxFit.cover, width: getWidth(160), height: getHeight(120), errorBuilder: (_, __, ___) => const SizedBox.shrink())),
+            borderRadius:
+                const BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+            child: Image.network(
+              widget.category.icon ?? "",
+              fit: BoxFit.cover,
+              width: getWidth(160),
+              height: getHeight(120),
+              errorBuilder: (_, __, ___) => LoadingContainer(
+                width: getWidth(160),
+                height: getHeight(120),
+              ),
+              loadingBuilder:
+                  (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) return child;
+                return LoadingContainer(
+                  width: getWidth(160),
+                  height: getHeight(120),
+                );
+              },
+            ),
+          ),
           Padding(
             padding: EdgeInsets.only(top: getHeight(20), left: getWidth(10), right: getWidth(10)),
             child: Text(
-              widget.subCategory.name ?? "",
+              widget.category.name ?? "",
               style: TextStyle(color: AppColors.primaryBlack, fontWeight: FontWeight.w700),
               overflow: TextOverflow.ellipsis,
               maxLines: 2,

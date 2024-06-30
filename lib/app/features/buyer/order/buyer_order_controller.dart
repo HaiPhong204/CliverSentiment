@@ -1,4 +1,7 @@
 import 'dart:developer';
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
+
 import '../../../core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
@@ -18,6 +21,9 @@ class BuyerOrderController extends GetxController {
   Rx<Order> order = Order().obs;
   RxList<String> images = RxList();
   Status selectedStatus = Status.PendingPayment;
+  RxString fileName = "Please select a zip file".tr.obs;
+  RxString fileSizeName = "".obs;
+  File? file;
 
   // buyer order detail
   Status? orderStatus;
@@ -164,24 +170,13 @@ class BuyerOrderController extends GetxController {
     }
     EasyLoading.show();
     try {
-      var sentiment = await SentimentService.ins.getSentiment(text: reviewContent);
-      var review = Review();
-      if (sentiment.isOk) {
-        if (sentiment.body != null) {
-          sentiment.body.forEach((v) {
-            if (v != null) {
-              review = Review.fromJson(v);
-            }
-          });
-        }
-      }
       var res = await OrderService.ins.buyerReview(
         orderId: order.value.id as int,
         createReview: CreateReview(
           orderId: order.value.id,
           rating: rating,
-          comment: review.comment,
-          label: review.label
+          comment: reviewContent,
+          label: 0
         ),
       );
       if (res.isOk) {
@@ -240,6 +235,7 @@ class BuyerOrderController extends GetxController {
       var res = await OrderService.ins.getBuyerOrders();
       EasyLoading.dismiss();
       if (res!.isOk) {
+        print(res.body["data"]);
         List<Order> listOrder = res.body["data"]
             .map<Order>((json) => Order.fromJson(json))
             .toList() as List<Order>;
@@ -328,6 +324,102 @@ class BuyerOrderController extends GetxController {
       EasyLoading.dismiss();
     }
     EasyLoading.dismiss();
+  }
+
+  void clearZipFile() {
+    file = null;
+    fileName.value = "Please select a zip file".tr;
+    fileSizeName.value = "";
+  }
+
+  Future<void> deliveryOrder() async {
+    EasyLoading.show();
+    try {
+      CreateResource? createResource;
+      String? zipUrl;
+      if (file != null) {
+        zipUrl = await StorageService.ins
+            .uploadZip(file!, order.value.package?.postId as int);
+        createResource = CreateResource(
+          name: fileName.value,
+          size: file?.lengthSync(),
+          url: zipUrl,
+        );
+        String temp =
+        fileSizeName.value.substring(0, fileSizeName.value.length - 4);
+        double fileSize = double.parse(temp.substring(1));
+        if (fileSize > 500) {
+          await Get.defaultDialog(
+              title: "The selected zip file must not exceed 500 MB");
+          return;
+        }
+      } else {
+        Get.defaultDialog(
+          title: "Error".tr,
+          content: Text("Please select a zip file".tr),
+        );
+        EasyLoading.dismiss();
+        return;
+      }
+      OrderAction orderAction = OrderAction(
+        action: Action.Action.Delivery,
+        resource: createResource,
+      );
+      var res = await OrderService.ins.sendSellerAction(
+        orderId: order.value.id as int,
+        orderAction: orderAction,
+      );
+      await reloadData();
+      EasyLoading.dismiss();
+      if (res.isOk) {
+        Get.defaultDialog(
+          title: "Success",
+          content: const Text("Delivery order successfully"),
+        );
+      } else {
+        Get.defaultDialog(
+          title: "Error".tr,
+          content: Text(res.error),
+        );
+      }
+    } catch (e) {
+      log("delivery order error $e");
+      EasyLoading.dismiss();
+    }
+  }
+
+  Future<void> pickZipFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.any,
+      allowMultiple: false,
+    );
+    if (result != null) {
+      log(result.toString());
+      File pickedFile = File(result.files.single.path as String);
+      if (pickedFile.path.substring(pickedFile.path.length - 3) != 'zip') {
+        await Get.defaultDialog(
+          title: "Unsupported file type".tr,
+          content: Text("Please pick a zip file".tr),
+        );
+        return;
+      }
+      file = pickedFile;
+      fileName.value = getFileName();
+      String temp = await getFileSize(pickedFile.path, 1);
+      fileSizeName.value = "($temp)";
+    }
+  }
+
+  String getFileName() {
+    int nameLength = 0;
+    for (var i = file!.path.length - 1; i >= 0; i--) {
+      if (file?.path[i] != '/') {
+        nameLength++;
+      } else {
+        break;
+      }
+    }
+    return file!.path.substring(file!.path.length - nameLength);
   }
 
   void popAllToBottomBar() {

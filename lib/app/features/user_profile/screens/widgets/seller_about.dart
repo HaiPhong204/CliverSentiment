@@ -42,6 +42,16 @@ class _SellerAboutState extends State<SellerAbout> {
             ),
             const SizedBox(height: 20),
             Text(widget.user.description ?? ''),
+            const SizedBox(height: 10),
+            Text(
+              "Skills".tr,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(widget.user.skills ?? ''),
+            const SizedBox(height: 10),
             const Divider(),
             Row(
               children: [
@@ -65,7 +75,7 @@ class _SellerAboutState extends State<SellerAbout> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Member since".tr),
-                    Text("Jun 2021".tr),
+                    Text("Jan 2024".tr),
                   ],
                 ),
               ],
@@ -139,20 +149,12 @@ class _SellerAboutState extends State<SellerAbout> {
             ),
             const SizedBox(height: 30),
             //Skill
-            Text(
-              "Skills".tr,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Wrap(
-              spacing: 10,
-              runSpacing: 5,
-              children: List.generate(widget.user.skills?.length ?? 0,
-                  (index) => buildSkillItem(widget.user.skills?[index] ?? '')),
-            ),
-            const SizedBox(height: 10),
+            // Wrap(
+            //   spacing: 10,
+            //   runSpacing: 5,
+            //   children: List.generate(widget.user.skills?.length ?? 0,
+            //       (index) => buildSkillItem(widget.user.skills?[index] ?? '')),
+            // ),
           ],
         ),
       ),
@@ -175,7 +177,7 @@ class _SellerAboutState extends State<SellerAbout> {
                     },
                     barrierDismissible: true,
                     barrierLabel: 'abc',
-                    barrierColor: Colors.transparent,
+                    barrierColor: Colors.white,
                     transitionDuration: const Duration(milliseconds: 200),
                   );
                 },

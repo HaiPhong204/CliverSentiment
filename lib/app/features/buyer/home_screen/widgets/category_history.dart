@@ -112,7 +112,7 @@ class _CategoryHistoryItemState extends State<CategoryHistoryItem> {
           ),
           Container(
             padding: EdgeInsets.only(bottom: getHeight(20), left: getWidth(10), right: getWidth(10)),
-            height: getHeight(75),
+            height: getHeight(90),
             child: Text(
               widget.postHistory.title ?? '',
               style: TextStyle(fontSize: 14, color: AppColors.primaryBlack),

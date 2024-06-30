@@ -12,6 +12,8 @@ import 'app/features/setting/setting_controller.dart';
 import 'data/models/model.dart';
 import 'data/services/services.dart';
 
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
@@ -30,7 +32,6 @@ void main() async {
 
 initData() async {
   await Firebase.initializeApp();
-
   var pref = await SharedPreferences.getInstance();
   final userController = Get.put(UserController());
   final settingController = Get.put(SettingController());

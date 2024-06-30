@@ -74,12 +74,14 @@ class _UserReviewScreenState extends State<UserReviewScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         const Icon(
                           Icons.star,
@@ -87,7 +89,7 @@ class _UserReviewScreenState extends State<UserReviewScreen> {
                           size: 60,
                         ),
                         Text(
-                          (avgRating / sumRating).toStringAsFixed(1),
+                          sumRating != 0 ? (avgRating / sumRating).toStringAsFixed(1) : "0",
                           style: TextStyle(
                             fontSize: getFont(18),
                             fontWeight: FontWeight.w700,
@@ -98,9 +100,10 @@ class _UserReviewScreenState extends State<UserReviewScreen> {
                     const SizedBox(width: 10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       children: List.generate(
                         5,
-                        (index) => Padding(
+                        (index) => Container(
                           padding: const EdgeInsets.symmetric(vertical: 3),
                           child: Row(
                             children: [
@@ -119,15 +122,16 @@ class _UserReviewScreenState extends State<UserReviewScreen> {
                               ),
                               const SizedBox(width: 5),
                               Stack(
+                                fit: StackFit.loose,
                                 children: [
                                   Container(
                                     height: 15,
-                                    width: 200,
+                                    width: getWidth(200),
                                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: AppColors.primaryWhite),
                                   ),
                                   Container(
                                     height: 15,
-                                    width: 200 * ratings[index].count! / sumRating,
+                                    width: sumRating != 0 ? getWidth(200) * ratings[index].count! / sumRating : 0,
                                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: Colors.amber),
                                   ),
                                 ],

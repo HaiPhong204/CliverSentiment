@@ -13,7 +13,6 @@ class AppColors extends GetxController {
   static Color itemChildColor = Colors.white;
   static Color greyShadowColor = Colors.transparent;
   static Color backgroundColorHomeScreen = Colors.white;
-  static Color textColor = Colors.black;
   static Color fillColorTextField = Colors.transparent;
   static Color iconFindColor = Colors.transparent;
   static Color metallicSilver = Colors.transparent;
@@ -37,7 +36,6 @@ class AppColors extends GetxController {
       itemChildColor = Colors.white;
       greyShadowColor = const Color.fromRGBO(118, 140, 170, 0.16);
       backgroundColorHomeScreen = Colors.white;
-      textColor = Colors.black;
       fillColorTextField = const Color(0xFFF4F4F5);
       iconFindColor = const Color(0xff1BBA85);
       metallicSilver = Colors.grey;
@@ -60,7 +58,6 @@ class AppColors extends GetxController {
       itemChildColor = Colors.white;
       greyShadowColor = const Color.fromRGBO(118, 140, 170, 0.16);
       backgroundColorHomeScreen = Colors.white;
-      textColor = Colors.black;
       fillColorTextField = const Color(0xFFF4F4F5);
       iconFindColor = const Color(0xff1BBA85);
       metallicSilver = const Color(0xffACAAA5);
@@ -77,8 +74,7 @@ class AppColors extends GetxController {
   //LIGHT THEME
   ThemeData lightTheme = ThemeData.light().copyWith(
     textTheme: ThemeData.light().textTheme.apply(
-          fontFamily: "SFProRounded",
-        ),
+          fontFamily: "SFProRounded",),
     scaffoldBackgroundColor: const Color(0xffACAAA5).withOpacity(0.01),
     colorScheme: ColorScheme.light(primary: AppColors.primaryColor),
     hintColor: secondaryColor,
@@ -110,7 +106,7 @@ class AppColors extends GetxController {
   ThemeData darkTheme = ThemeData.dark().copyWith(
     textTheme: ThemeData.dark().textTheme.apply(
           fontFamily: "SFProRounded",
-        ),
+    ),
     scaffoldBackgroundColor: Colors.black54,
     colorScheme: ColorScheme.light(primary: AppColors.primaryColor),
     hintColor: secondaryColor,

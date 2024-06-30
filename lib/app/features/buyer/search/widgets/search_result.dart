@@ -45,7 +45,6 @@ class _SearchResultState extends State<SearchResult> {
       deliveryTime: deliveryTime,
       filter: filter,
       categoryId: categoryId,
-      subCategoryId: subCategoryId,
       limit: limit,
       offset: offset,
     );
@@ -168,7 +167,7 @@ class _SearchResultState extends State<SearchResult> {
                             (index) => InkWellWrapper(
                               onTap: () => Get.toNamed(postDetailScreenRoute, arguments: postService[index].id),
                               margin: EdgeInsets.symmetric(horizontal: getWidth(15), vertical: getHeight(10)),
-                              height: getHeight(140),
+                              height: getHeight(170),
                               width: MediaQuery.of(context).size.width,
                               color: AppColors.primaryWhite,
                               borderRadius: BorderRadius.circular(10),
@@ -193,18 +192,18 @@ class _SearchResultState extends State<SearchResult> {
                                     borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
                                     child: Image.network(
                                       postService[index].images?[0] ?? '',
-                                      height: getHeight(140),
+                                      height: getHeight(170),
                                       width: getWidth(155),
                                       fit: BoxFit.cover,
                                       loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
                                         if (loadingProgress == null) return child;
                                         return LoadingContainer(
-                                          height: getHeight(140),
+                                          height: getHeight(170),
                                           width: getWidth(155),
                                         );
                                       },
                                       errorBuilder: (_, __, ___) => LoadingContainer(
-                                        height: getHeight(140),
+                                        height: getHeight(170),
                                         width: getWidth(155),
                                       ),
                                     ),
@@ -223,11 +222,6 @@ class _SearchResultState extends State<SearchResult> {
                                                   padding: EdgeInsets.only(left: getWidth(3), right: getWidth(3)),
                                                   child: Text(postService[index].ratingAvg?.toStringAsFixed(2) ?? '0', style: TextStyle(color: AppColors.rajah, fontSize: 14, fontWeight: FontWeight.w700))),
                                               Expanded(child: Text("(${postService[index].ratingCount ?? 0})", style: TextStyle(color: AppColors.metallicSilver, fontSize: 14))),
-                                              InkWellWrapper(
-                                                  paddingChild: const EdgeInsets.all(5),
-                                                  borderRadius: BorderRadius.circular(20),
-                                                  onTap: () {},
-                                                  child: const Icon(Icons.favorite_outlined, size: 22, color: Colors.redAccent))
                                             ],
                                           ),
                                         ),

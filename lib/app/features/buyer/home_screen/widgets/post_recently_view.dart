@@ -5,7 +5,7 @@ import '../../../../core/core.dart';
 import '../../../features.dart';
 
 class PostRecentlyView extends StatefulWidget {
-  const PostRecentlyView({Key? key, required this.postRecent, this.onChangedStatus, this.onTap, this.getPostsRecent}) : super(key: key);
+  const PostRecentlyView({super.key, required this.postRecent, this.onChangedStatus, this.onTap, this.getPostsRecent});
   final Post postRecent;
   final Function(int)? onChangedStatus;
   final void Function()? onTap;

@@ -26,7 +26,7 @@ class HorizontalOrderItem extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 10),
         color: AppColors.primaryWhite,
         child: Padding(
-          padding: const EdgeInsets.all(7.0),
+          padding: const EdgeInsets.all(6.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,7 +34,7 @@ class HorizontalOrderItem extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                 child: (!Get.find<BottomBarController>().isSeller.value)
                     ? Text(
-                        order.seller!.name.toString(),
+                        order.candidate?.name.toString() ?? "",
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

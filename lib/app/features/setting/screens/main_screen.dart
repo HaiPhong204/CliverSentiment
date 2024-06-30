@@ -11,7 +11,7 @@ import '../../../routes/routes.dart';
 import '../../features.dart';
 
 class ProfileSettingScreen extends StatefulWidget {
-  const ProfileSettingScreen({Key? key}) : super(key: key);
+  const ProfileSettingScreen({super.key});
 
   @override
   State<ProfileSettingScreen> createState() => _ProfileSettingScreenState();
@@ -105,7 +105,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
       children: [
         Text(
           "My Cliver".tr,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: AppColors.primaryBlack,),
         ),
         const Divider(),
         ListTile(
@@ -116,7 +116,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "Earnings".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -134,7 +134,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "Buyer requests".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -150,7 +150,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "My profile".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -169,7 +169,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "In-app credit".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -187,7 +187,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
       children: [
         Text(
           "My Cliver".tr,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: AppColors.primaryBlack,),
         ),
         const Divider(),
         ListTile(
@@ -198,7 +198,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "Saved".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -214,7 +214,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "Manage requests".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -230,7 +230,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "My profile".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -247,7 +247,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "In-app credit".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -262,9 +262,9 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                   color: AppColors.primaryColor,
                   size: iconSize,
                 ),
-                title: const Text(
+                title: Text(
                   "Become a Seller",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
                 ),
                 onTap: () {
                   Get.to(() => const VerifySellerScreen());
@@ -281,7 +281,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
       children: [
         Text(
           "General".tr,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: AppColors.primaryBlack,),
         ),
         const Divider(),
         ListTile(
@@ -292,7 +292,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "Preferences".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -310,7 +310,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "Customer reviews".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           trailing: const Icon(
             Icons.keyboard_arrow_right,
@@ -328,7 +328,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
           ),
           title: Text(
             "Logout".tr,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primaryBlack,),
           ),
           onTap: () async {
             Get.delete<ChatController>();

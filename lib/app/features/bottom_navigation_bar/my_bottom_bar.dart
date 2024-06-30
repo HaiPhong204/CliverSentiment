@@ -21,7 +21,6 @@ class _MyBottomBarState extends State<MyBottomBar> {
   @override
   void initState() {
     super.initState();
-
     SignalRService.instance.startConnection();
   }
 

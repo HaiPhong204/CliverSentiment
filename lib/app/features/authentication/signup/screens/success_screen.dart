@@ -5,7 +5,7 @@ import '../../../../controller/auth/signup_controller.dart';
 import '../../../../routes/routes.dart';
 
 class SuccessScreen extends StatefulWidget {
-  const SuccessScreen({Key? key}) : super(key: key);
+  const SuccessScreen({super.key});
 
   @override
   State<SuccessScreen> createState() => _SuccessScreenState();

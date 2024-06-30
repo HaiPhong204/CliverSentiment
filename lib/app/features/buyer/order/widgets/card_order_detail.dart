@@ -46,7 +46,7 @@ class CardOrderDetail extends StatelessWidget {
                     children: [
                       Text(isBuyer ? "${'Seller'.tr}:" : "${'Buyer'.tr}:"),
                       const Spacer(),
-                      Text(" ${order.seller?.name}"),
+                      Text(" ${order.candidate?.name}"),
                     ],
                   ),
                   Row(

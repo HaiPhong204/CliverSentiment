@@ -68,15 +68,15 @@ class Edit_Step2_3packState extends State<Edit_Step2_3pack>
               bottom: BorderSide(width: 0.5, color: AppColors.primaryColor),
             ),
           ),
-          tabs: const [
+          tabs: [
             Tab(
-              text: "Basic",
+              text: "Basic".tr,
             ),
             Tab(
-              text: "Standard",
+              text: "Standard".tr,
             ),
             Tab(
-              text: "Premium",
+              text: "Premium".tr,
             ),
           ],
         ),

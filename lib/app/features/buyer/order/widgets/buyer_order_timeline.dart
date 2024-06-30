@@ -59,10 +59,11 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
               fileName = element.resource?.name;
               buyerOrderController.url = element.resource?.url as String;
             }
-            buildOrderDelivered(
-                deliveredTime: element.createdAt,
-                fileName: fileName,
-                isEnd: isEnd);
+            // buildOrderDelivered(
+            //     deliveredTime: element.createdAt,
+            //     fileName: fileName,
+            //     isEnd: isEnd);
+            buildOrderDelivered(deliveredTime: element.createdAt, resource: element.resource, isEnd: isEnd);
             break;
           case Status.Completed:
             buildOrderCompleted(completedTime: element.createdAt);
@@ -87,73 +88,73 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
         color: Colors.blueAccent,
       ),
     );
-    if (buyerOrderController.orderStatus == Status.PendingPayment) {
-      timeline.add(
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Text(
-                  "Pending payment".tr,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(AppColors.primaryColor),
-                      ),
-                      onPressed: () async {
-                        Post post = Post();
-                        SimplePost? simplePost =
-                            order.value.package?.post ;
-                        // convert simple post to post
-                        post.title = simplePost?.title;
-                        post.description = simplePost?.description;
-                        post.userId = simplePost?.userId;
-                        post.images = simplePost?.images;
-                        await Get.toNamed(paymentMethodRoute, arguments: [
-                          order.value.package,
-                          true,
-                          post,
-                          true,
-                          order.value
-                        ]);
-                      },
-                      child: Text(
-                        "Continue payment".tr,
-                        style: const TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: TextButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                      ),
-                      onPressed: () => buyerOrderController.cancelOrder(),
-                      child: Text("cancel".tr),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      );
-    }
+    // if (buyerOrderController.orderStatus == Status.PendingPayment) {
+    //   timeline.add(
+    //     Padding(
+    //       padding: const EdgeInsets.symmetric(horizontal: 10),
+    //       child: Column(
+    //         crossAxisAlignment: CrossAxisAlignment.start,
+    //         children: [
+    //           Padding(
+    //             padding: const EdgeInsets.symmetric(vertical: 10),
+    //             child: Text(
+    //               "Pending payment".tr,
+    //               style: const TextStyle(
+    //                 color: Colors.black,
+    //                 fontSize: 18,
+    //                 fontWeight: FontWeight.bold,
+    //               ),
+    //             ),
+    //           ),
+    //           Row(
+    //             children: [
+    //               Expanded(
+    //                 child: TextButton(
+    //                   style: ButtonStyle(
+    //                     backgroundColor:
+    //                         MaterialStateProperty.all(AppColors.primaryColor),
+    //                   ),
+    //                   onPressed: () async {
+    //                     Post post = Post();
+    //                     SimplePost? simplePost =
+    //                         order.value.package?.post ;
+    //                     // convert simple post to post
+    //                     post.title = simplePost?.title;
+    //                     post.description = simplePost?.description;
+    //                     post.userId = simplePost?.userId;
+    //                     post.images = simplePost?.images;
+    //                     await Get.toNamed(paymentMethodRoute, arguments: [
+    //                       order.value.package,
+    //                       true,
+    //                       post,
+    //                       true,
+    //                       order.value
+    //                     ]);
+    //                   },
+    //                   child: Text(
+    //                     "Continue payment".tr,
+    //                     style: const TextStyle(color: Colors.white),
+    //                   ),
+    //                 ),
+    //               ),
+    //               const SizedBox(width: 10),
+    //               Expanded(
+    //                 child: TextButton(
+    //                   style: ButtonStyle(
+    //                     backgroundColor:
+    //                         MaterialStateProperty.all(Colors.white),
+    //                   ),
+    //                   onPressed: () => buyerOrderController.cancelOrder(),
+    //                   child: Text("cancel".tr),
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //         ],
+    //       ),
+    //     ),
+    //   );
+    // }
   }
 
   void buildOrderCreated({required DateTime? createdTime}) {
@@ -193,14 +194,43 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
   }
 
   void buildOrderDoing({required DateTime? doneTime, required bool isEnd}) {
+    // timeline.add(
+    //   StepperItem(
+    //     leading: buyerOrderController.isFirstDoing
+    //         ? Icons.rocket
+    //         : Icons.restart_alt,
+    //     title: buyerOrderController.isFirstDoing
+    //         ? "The order started".tr
+    //         : "${order.value.candidate?.name} ${'reworked the order'.tr}",
+    //     subtitle: (doneTime != null)
+    //         ? f.format(FormatHelper().toLocal(doneTime) as DateTime)
+    //         : "Get time by status null",
+    //     color: Colors.green,
+    //   ),
+    // );
+    // buyerOrderController.isFirstDoing = false;
+    // if (isEnd) {
+    //   timeline.add(
+    //     Padding(
+    //       padding: const EdgeInsets.symmetric(vertical: 10),
+    //       child: Text(
+    //         "Your order is being processed".tr,
+    //         style: const TextStyle(
+    //           color: Colors.black,
+    //           fontSize: 16,
+    //           fontWeight: FontWeight.bold,
+    //         ),
+    //       ),
+    //     ),
+    //   );
     timeline.add(
       StepperItem(
         leading: buyerOrderController.isFirstDoing
             ? Icons.rocket
             : Icons.restart_alt,
-        title: buyerOrderController.isFirstDoing
-            ? "The order started".tr
-            : "${order.value.seller?.name} ${'reworked the order'.tr}",
+        title: (buyerOrderController.isFirstDoing)
+            ? "You have started work".tr
+            : "Reworked the order".tr,
         subtitle: (doneTime != null)
             ? f.format(FormatHelper().toLocal(doneTime) as DateTime)
             : "Get time by status null",
@@ -210,15 +240,79 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
     buyerOrderController.isFirstDoing = false;
     if (isEnd) {
       timeline.add(
+        Card(
+          child: SizedBox(
+            height: 50,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.folder_zip,
+                    size: 30,
+                    color: Colors.yellowAccent,
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Obx(
+                          () => Text(
+                        "${buyerOrderController.fileName.value} ${buyerOrderController.fileSizeName.value}",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () => buyerOrderController.clearZipFile(),
+                    child: Container(
+                      padding: const EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                        color: Colors.redAccent.withOpacity(0.2),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.close,
+                        color: Colors.redAccent,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+      timeline.add(
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Text(
-            "Your order is being processed".tr,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                    MaterialStateProperty.all(AppColors.primaryColor),
+                  ),
+                  onPressed: () => buyerOrderController.deliveryOrder(),
+                  child: Text(
+                    "Delivery".tr,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 20),
+              SizedBox(
+                width: 50,
+                child: ButtonIcon(
+                  icon: Icons.attach_file_outlined,
+                  onPressed: () => buyerOrderController.pickZipFile(),
+                ),
+              ),
+            ],
           ),
         ),
       );
@@ -226,21 +320,130 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
     }
   }
 
+  // void buildOrderDelivered(
+  //     {required DateTime? deliveredTime,
+  //     required bool isEnd,
+  //     String? fileName}) {
+  //   String subtitle = (deliveredTime != null)
+  //       ? f.format(FormatHelper().toLocal(deliveredTime) as DateTime)
+  //       : "Get time by status null";
+  //   timeline.add(
+  //     StepperItem(
+  //         leading: Icons.inventory_2,
+  //         title: "${order.value.candidate?.name} ${'delivered the order'.tr}",
+  //         subtitle: subtitle,
+  //         color: Colors.pinkAccent),
+  //   );
+  //   if (fileName != null) {
+  //     timeline.add(
+  //       Card(
+  //         child: Padding(
+  //           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+  //           child: Row(
+  //             children: [
+  //               const Icon(
+  //                 Icons.folder_zip,
+  //                 size: 30,
+  //                 color: Colors.yellowAccent,
+  //               ),
+  //               const SizedBox(width: 10),
+  //               Expanded(
+  //                 child: Text(
+  //                   fileName,
+  //                   maxLines: 2,
+  //                   overflow: TextOverflow.ellipsis,
+  //                   style: const TextStyle(
+  //                     color: Colors.black,
+  //                     fontSize: 14,
+  //                   ),
+  //                 ),
+  //               ),
+  //               GestureDetector(
+  //                 onTap: () => buyerOrderController.downloadZip(fileName),
+  //                 child: const Icon(
+  //                   Icons.download,
+  //                   size: 30,
+  //                 ),
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     );
+  //   }
+  //   if (isEnd) {
+  //     if (order.value.leftRevisionTimes == 0) {
+  //       timeline.add(
+  //         Padding(
+  //           padding: const EdgeInsets.symmetric(horizontal: 10),
+  //           child: SizedBox(
+  //             width: double.infinity,
+  //             child: TextButton(
+  //               style: ButtonStyle(
+  //                 backgroundColor:
+  //                     MaterialStateProperty.all(AppColors.primaryColor),
+  //               ),
+  //               onPressed: () => buyerOrderController.acceptDeliveredOrder(),
+  //               child: Text(
+  //                 "Ok".tr,
+  //                 style: const TextStyle(color: Colors.white),
+  //               ),
+  //             ),
+  //           ),
+  //         ),
+  //       );
+  //     } else {
+  //       timeline.add(
+  //         Padding(
+  //           padding: const EdgeInsets.symmetric(horizontal: 10),
+  //           child: Row(
+  //             children: [
+  //               Expanded(
+  //                 child: TextButton(
+  //                   style: ButtonStyle(
+  //                     backgroundColor:
+  //                         MaterialStateProperty.all(AppColors.primaryColor),
+  //                   ),
+  //                   onPressed: () =>
+  //                       buyerOrderController.acceptDeliveredOrder(),
+  //                   child: Text(
+  //                     "Ok".tr,
+  //                     style: const TextStyle(color: Colors.white),
+  //                   ),
+  //                 ),
+  //               ),
+  //               const SizedBox(width: 10),
+  //               Expanded(
+  //                 child: TextButton(
+  //                   style: ButtonStyle(
+  //                     backgroundColor: MaterialStateProperty.all(Colors.white),
+  //                   ),
+  //                   onPressed: () => buyerOrderController.denyDeliveredOrder(),
+  //                   child: Text("Rework".tr),
+  //                 ),
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       );
+  //     }
+  //   }
+  // }
+
   void buildOrderDelivered(
       {required DateTime? deliveredTime,
-      required bool isEnd,
-      String? fileName}) {
-    String subtitle = (deliveredTime != null)
-        ? f.format(FormatHelper().toLocal(deliveredTime) as DateTime)
-        : "Get time by status null";
+        required Resource? resource,
+        required bool isEnd}) {
     timeline.add(
       StepperItem(
           leading: Icons.inventory_2,
-          title: "${order.value.seller?.name} ${'delivered the order'.tr}",
-          subtitle: subtitle,
+          title: "You have delivered the order".tr,
+          subtitle: (deliveredTime != null)
+              ? f.format(FormatHelper().toLocal(deliveredTime) as DateTime)
+              : "Get time by status null",
           color: Colors.pinkAccent),
     );
-    if (fileName != null) {
+    if (resource != null) {
       timeline.add(
         Card(
           child: Padding(
@@ -255,7 +458,7 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
-                    fileName,
+                    resource.name.toString(),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
@@ -265,7 +468,7 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => buyerOrderController.downloadZip(fileName),
+                  onTap: () => buyerOrderController.downloadZip(resource.name.toString()),
                   child: const Icon(
                     Icons.download,
                     size: 30,
@@ -278,61 +481,15 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
       );
     }
     if (isEnd) {
-      if (order.value.leftRevisionTimes == 0) {
-        timeline.add(
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: SizedBox(
-              width: double.infinity,
-              child: TextButton(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(AppColors.primaryColor),
-                ),
-                onPressed: () => buyerOrderController.acceptDeliveredOrder(),
-                child: Text(
-                  "Ok".tr,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
+      timeline.add(
+        Text(
+          "You have to wait for the buyer to agree".tr,
+          style: const TextStyle(
+            color: Colors.red,
+            fontSize: 18,
           ),
-        );
-      } else {
-        timeline.add(
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextButton(
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(AppColors.primaryColor),
-                    ),
-                    onPressed: () =>
-                        buyerOrderController.acceptDeliveredOrder(),
-                    child: Text(
-                      "Ok".tr,
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: TextButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                    ),
-                    onPressed: () => buyerOrderController.denyDeliveredOrder(),
-                    child: Text("Rework".tr),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      }
+        ),
+      );
     }
   }
 
@@ -364,7 +521,7 @@ class _BuyerOrderTimelineState extends State<BuyerOrderTimeline> {
               StepperItem(
                   leading: Icons.star_rate_rounded,
                   title:
-                      "${order.value.seller?.name} ${'gave you a'.tr} ${element.rating}-${'star review'.tr}",
+                      "${order.value.candidate?.name} ${'gave you a'.tr} ${element.rating}-${'star review'.tr}",
                   subtitle: element.comment,
                   color: Colors.amberAccent),
             );

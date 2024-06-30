@@ -81,9 +81,12 @@ class _PostDetailBodyState extends State<PostDetailBody>
           ),
           tabs: List.generate(
             widget.post.packages!.length,
-            (index) => Tab(
-              text: "${oCcy.format(widget.post.packages?[index].price)} VNĐ",
-            ),
+            (index) {
+              var price = widget.post.packages![index].price! / 2500000 > 1 ? widget.post.packages![index].price! / 1000000 : widget.post.packages![index].price;
+              return Tab(
+                text: "${oCcy.format(price)} triệu VNĐ",
+              );
+            }
           ),
         ),
         SizedBox(
@@ -92,14 +95,16 @@ class _PostDetailBodyState extends State<PostDetailBody>
             controller: _tabController,
             children: List.generate(
               widget.post.packages!.length,
-              (index) => PostPackage(
-                package: widget.post.packages?[index],
-                type: "${oCcy.format(widget.post.packages?[index].price)} VNĐ",
-                canBuy: (widget.post.userId !=
-                        Get.find<UserController>().currentUser.value.id)
-                    ? true
-                    : null,
-              ),
+              (index) {
+                return PostPackage(
+                  package: widget.post.packages?[index],
+                  type: "${oCcy.format(widget.post.packages![index].price)} VNĐ",
+                  canBuy: (widget.post.userId !=
+                      Get.find<UserController>().currentUser.value.id)
+                      ? true
+                      : null,
+                );
+              }
             ),
           ),
         ),

@@ -88,8 +88,7 @@ class SignupController extends GetxController {
       SharedPreferences prefs = await SharedPreferences.getInstance();
 
       prefs.setString("user_token", "Bearer ${res.body["token"]}");
-
-      Get.offAllNamed(myBottomBarRoute);
+      Get.toNamed(profileScreenRoute);
     } else {
       Get.defaultDialog(
         title: "Error",

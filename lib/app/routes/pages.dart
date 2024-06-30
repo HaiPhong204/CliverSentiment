@@ -1,5 +1,6 @@
-import 'package:cliver_sentiment/app/features/customer_reviews/customer_reviews_screen.dart';
+import 'package:cliver_sentiment/app/features/buyer/home_screen/all_job_screen.dart';
 import 'package:get/get.dart';
+import '../features/customer_reviews/customer_reviews_screen.dart';
 import '../features/features.dart';
 import 'routes.dart';
 
@@ -109,6 +110,14 @@ class AppPages {
     GetPage(
         name: sellerPostHomeScreenRoute,
         page: () => const SellerPostHomeScreen(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: profileScreenRoute,
+        page: () => const ProfileScreen(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: getAllJobRecommendRoute,
+        page: () => const AllJobScreen(),
         transition: Transition.rightToLeft),
   ];
 }

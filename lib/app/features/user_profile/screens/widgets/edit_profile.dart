@@ -19,9 +19,9 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile> {
   late TextEditingController nameController = TextEditingController(text: widget.user.name);
   late TextEditingController descriptionController = TextEditingController(text: widget.user.description);
+  late TextEditingController skillsController = TextEditingController(text: widget.user.skills);
   TextEditingController languageController = TextEditingController();
   TextEditingController levelController = TextEditingController();
-  TextEditingController skillController = TextEditingController();
   File? imageFile;
   final _formKey = GlobalKey<FormState>();
   late User userTemp;
@@ -42,7 +42,7 @@ class _EditProfileState extends State<EditProfile> {
     descriptionController.dispose();
     languageController.dispose();
     levelController.dispose();
-    skillController.dispose();
+    skillsController.dispose();
     super.dispose();
   }
 
@@ -51,7 +51,7 @@ class _EditProfileState extends State<EditProfile> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Edit Profile',
+          'Edit Profile'.tr,
           style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
@@ -68,6 +68,7 @@ class _EditProfileState extends State<EditProfile> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    avatarView(),
                     SizedBox(height: getHeight(20)),
                     TextFormField(
                       controller: nameController,
@@ -89,7 +90,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      "Description",
+                      "Description".tr,
                       style: TextStyle(color: AppColors.primaryBlack, fontSize: getFont(18)),
                     ),
                     const SizedBox(height: 8),
@@ -112,9 +113,34 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 10),
                     Text(
-                      'Languages',
+                      'Skills'.tr,
+                      style: TextStyle(color: AppColors.primaryBlack, fontSize: getFont(18)),
+                    ),
+                    const SizedBox(height: 10),
+                    TextFormField(
+                      controller: skillsController,
+                      maxLines: 4,
+                      decoration: InputDecoration(
+                        hintText: 'Enter your Skills',
+                        contentPadding: const EdgeInsets.all(16),
+                        fillColor: AppColors.metallicSilver.withOpacity(0.1),
+                        filled: true,
+                        hintStyle: TextStyle(fontSize: getFont(15)),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: AppColors.primaryBlack, width: 0.2),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      'Languages'.tr,
                       style: TextStyle(color: AppColors.primaryBlack, fontSize: getFont(18)),
                     ),
                     const SizedBox(height: 15),
@@ -293,100 +319,6 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                       ],
                     ),
-
-                    const SizedBox(height: 8),
-                    Text(
-                      'Skills',
-                      style: TextStyle(color: AppColors.primaryBlack, fontSize: getFont(18)),
-                    ),
-                    const SizedBox(height: 8),
-                    Wrap(
-                      spacing: 10,
-                      runSpacing: 5,
-                      children: List.generate(userTemp.skills!.length + 1, (index) {
-                        if (index == userTemp.skills!.length) {
-                          return InkWellWrapper(
-                            onTap: () => setState(() => editSkills = true),
-                            borderRadius: BorderRadius.circular(10),
-                            paddingChild: const EdgeInsets.all(6),
-                            color: Colors.grey.withOpacity(0.5),
-                            child: const Icon(Icons.add, size: 25),
-                          );
-                        } else {
-                          return buildSkillItem(index);
-                        }
-                      }),
-                    ),
-                    const SizedBox(height: 15),
-                    if (editSkills)
-                      SizedBox(
-                        height: getHeight(40),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: TextFormField(
-                                controller: skillController,
-                                maxLines: 1,
-                                decoration: InputDecoration(
-                                  hintText: 'Enter your skill',
-                                  contentPadding: EdgeInsets.symmetric(horizontal: getWidth(16), vertical: getHeight(5)),
-                                  fillColor: AppColors.metallicSilver.withOpacity(0.1),
-                                  filled: true,
-                                  hintStyle: TextStyle(fontSize: getFont(15)),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: AppColors.primaryBlack, width: 0.2),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: getHeight(10)),
-                            InkWellWrapper(
-                              onTap: () {
-                                if(!userTemp.skills!.contains(skillController.text)) {
-                                  setState(() {
-                                    userTemp.skills!.add(skillController.text);
-                                    editSkills = false;
-                                    skillController.clear();
-                                  });
-                                } else {
-                                  setState(() {
-                                    editSkills = false;
-                                    skillController.clear();
-                                  });
-                                }
-                              },
-                              borderRadius: BorderRadius.circular(10),
-                              paddingChild: EdgeInsets.symmetric(vertical: getHeight(12), horizontal: getWidth(15)),
-                              color: AppColors.greenCrayola,
-                              child: Text(
-                                'Add',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: AppColors.primaryWhite, fontSize: getFont(14)),
-                              ),
-                            ),
-                            SizedBox(width: getHeight(10)),
-                            InkWellWrapper(
-                              onTap: () {
-                                setState(() => editSkills = false);
-                                skillController.clear();
-                              },
-                              borderRadius: BorderRadius.circular(10),
-                              paddingChild: EdgeInsets.symmetric(vertical: getHeight(12), horizontal: getWidth(15)),
-                              color: AppColors.metallicSilver,
-                              child: Text(
-                                'Cancel',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: AppColors.primaryWhite, fontSize: getFont(14)),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
                   ],
                 ),
               ),
@@ -396,13 +328,14 @@ class _EditProfileState extends State<EditProfile> {
       ),
       bottomNavigationBar: SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: getHeight(80),
+        height: getHeight(100),
         child: InkWellWrapper(
-          margin: EdgeInsets.symmetric(horizontal: getWidth(10), vertical: getHeight(15)),
+          margin: const EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 35),
           color: AppColors.greenCrayola,
           onTap: () {
             userTemp.name = nameController.text;
             userTemp.description = descriptionController.text;
+            userTemp.skills = skillsController.text;
             widget.onSave?.call(userTemp);
             Navigator.of(context).pop();
           },
@@ -434,15 +367,7 @@ class _EditProfileState extends State<EditProfile> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(userTemp.skills?[index] ?? ''),
-            InkWellWrapper(
-              onTap: () => setState(() => userTemp.skills?.removeAt(index)),
-              borderRadius: BorderRadius.circular(15),
-              paddingChild: const EdgeInsets.all(5),
-              child: const Icon(
-                Icons.close,
-                size: 18,
-              ),
-            )
+
           ],
         ),
       ),
@@ -463,7 +388,7 @@ class _EditProfileState extends State<EditProfile> {
                   onTap: () => onAvatarClick(),
                   child: imageFile == null
                       ? Image.network(
-                          'https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg',
+                          widget.user.avatar ?? 'https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg',
                           height: 120,
                           width: 120,
                           fit: BoxFit.cover,
@@ -472,7 +397,7 @@ class _EditProfileState extends State<EditProfile> {
                             return const LoadingContainer(height: 120, width: 120);
                           },
                           errorBuilder: (context, object, stacktrace) {
-                            return Image.asset('assets/images/wallet.png', height: 120, width: 120, fit: BoxFit.cover);
+                            return Image.asset('assets/images/edit.png', height: 120, width: 120, fit: BoxFit.cover);
                           },
                         )
                       : Image.file(
@@ -481,7 +406,7 @@ class _EditProfileState extends State<EditProfile> {
                           width: 120,
                           fit: BoxFit.cover,
                           errorBuilder: (context, object, stacktrace) {
-                            return Image.asset('assets/images/wallet.png', height: 120, width: 120, fit: BoxFit.cover);
+                            return Image.asset('assets/images/edit.png', height: 120, width: 120, fit: BoxFit.cover);
                           },
                         ),
                 ),
@@ -497,7 +422,7 @@ class _EditProfileState extends State<EditProfile> {
                     color: AppColors.primaryBlack,
                   ),
                   padding: const EdgeInsets.all(8),
-                  child: Image.asset('assets/images/wallet.png', height: 12, width: 12, fit: BoxFit.cover),
+                  child: Image.asset('assets/images/edit.png', height: 12, width: 12, fit: BoxFit.cover),
                 ),
               ),
             )

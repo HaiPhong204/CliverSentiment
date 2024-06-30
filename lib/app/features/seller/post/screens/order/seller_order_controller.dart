@@ -220,24 +220,13 @@ class SellerOrderController extends GetxController {
     }
     EasyLoading.show();
     try {
-      var sentiment = await SentimentService.ins.getSentiment(text: reviewContent);
-      var review = Review();
-      if (sentiment.isOk) {
-        if (sentiment.body != null) {
-          sentiment.body.forEach((v) {
-            if (v != null) {
-              review = Review.fromJson(v);
-            }
-          });
-        }
-      }
       var res = await OrderService.ins.sellerReview(
         orderId: order.value.id as int,
         createReview: CreateReview(
           orderId: order.value.id,
           rating: rating,
-          comment: review.comment,
-          label: review.label
+          comment: reviewContent,
+          label: 0
         ),
       );
       if (res.isOk) {
@@ -349,6 +338,61 @@ class SellerOrderController extends GetxController {
     }
     return null;
   }
+
+  Future<void> acceptDeliveredOrder() async {
+    EasyLoading.show();
+    try {
+      OrderAction orderAction = OrderAction(action: Action.Action.Receive);
+      var res = await OrderService.ins.sendBuyerAction(
+        orderId: order.value.id as int,
+        orderAction: orderAction,
+      );
+      await reloadData();
+      EasyLoading.dismiss();
+      if (res.isOk) {
+        Get.defaultDialog(
+          title: "Success".tr,
+          content: Text("Accept delivered order success".tr),
+        );
+      } else {
+        Get.defaultDialog(
+          title: "Error".tr,
+          content: Text(res.error),
+        );
+      }
+    } catch (e) {
+      log("accept delivered order error: $e");
+      EasyLoading.dismiss();
+    }
+  }
+
+  Future<void> denyDeliveredOrder() async {
+    EasyLoading.show();
+    try {
+      OrderAction orderAction = OrderAction(action: Action.Action.Revision);
+      var res = await OrderService.ins.sendBuyerAction(
+        orderId: order.value.id as int,
+        orderAction: orderAction,
+      );
+      await reloadData();
+      await EasyLoading.dismiss();
+      if (res.isOk) {
+        Get.defaultDialog(
+          title: "Success".tr,
+          content: Text("Deny delivered order success".tr),
+        );
+      } else {
+        Get.defaultDialog(
+          title: "Error".tr,
+          content: Text(res.error),
+        );
+      }
+    } catch (e) {
+      log("deny delivered order error: $e");
+      EasyLoading.dismiss();
+    }
+  }
+
 
   String getFileName() {
     int nameLength = 0;

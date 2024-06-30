@@ -5,7 +5,7 @@ import '../../../../core/core.dart';
 import '../../../features.dart';
 
 class CategorySave extends StatefulWidget {
-  const CategorySave({Key? key, required this.postSave, this.onChangedStatus, this.onTap, this.getPostsRecent}) : super(key: key);
+  const CategorySave({super.key, required this.postSave, this.onChangedStatus, this.onTap, this.getPostsRecent});
   final Post postSave;
   final Function(int)? onChangedStatus;
   final void Function()? onTap;
@@ -32,6 +32,7 @@ class _CategorySaveState extends State<CategorySave> {
       color: AppColors.primaryWhite,
       margin: const EdgeInsets.all(5),
       width: getWidth(280),
+      height: getWidth(350),
       boxShadow: [
         BoxShadow(
           color: Colors.black.withOpacity(0.15),
@@ -48,6 +49,7 @@ class _CategorySaveState extends State<CategorySave> {
       ],
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
@@ -63,6 +65,7 @@ class _CategorySaveState extends State<CategorySave> {
             padding: EdgeInsets.only(left: getWidth(10), right: getWidth(10), top: getHeight(10), bottom: getHeight(5)),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 CircleAvatar(radius: 15, backgroundImage: NetworkImage(widget.postSave.user?.avatar ?? "")),
                 Expanded(

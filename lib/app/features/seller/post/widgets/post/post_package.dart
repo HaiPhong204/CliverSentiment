@@ -1,14 +1,14 @@
+import '../../../../../../data/services/services.dart';
+import '../../../../../common_widgets/common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../../../data/models/model.dart';
 import '../../../../../core/core.dart';
 import '../../../../../routes/routes.dart';
 import '../../../../features.dart';
 
 class PostPackage extends StatefulWidget {
-  const PostPackage({Key? key, this.package, required this.type, this.canBuy})
-      : super(key: key);
+  const PostPackage({super.key, this.package, required this.type, this.canBuy});
 
   @override
   State<PostPackage> createState() => _PostPackageState();
@@ -58,33 +58,47 @@ class _PostPackageState extends State<PostPackage> {
         ),
         const SizedBox(height: 20),
         _bottomController.isSeller.value
-            ? ElevatedButton(
-                onPressed: () => Get.toNamed(editPostScreenRoute),
+            ? InkWellWrapper(
+                onTap: () => Get.toNamed(editPostScreenRoute),
                 child: Text("Edit your post".tr),
               )
-            : ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: (widget.canBuy != null)
-                        ? MaterialStateProperty.all(AppColors.primaryColor)
-                        : MaterialStateProperty.all(Colors.grey)),
-                onPressed: () {
-                  (widget.canBuy != null)
-                      ? Get.toNamed(
-                          paymentMethodRoute,
-                          arguments: [
-                            _paymentController.post
-                                ?.packages![_paymentController.selectedPackage],
-                            false,
-                            null,
-                            false,
-                          ],
-                        )
-                      : Get.defaultDialog(
+            : InkWellWrapper(
+                color: widget.canBuy != null ? AppColors.primaryColor : Colors.grey,
+                paddingChild: EdgeInsets.symmetric(vertical: 8),
+                onTap: (widget.canBuy != null)
+                    ? () async {
+                  // Get.toNamed(
+                  //     paymentMethodRoute,
+                  //     arguments: [
+                  //       _paymentController.post?.packages![_paymentController.selectedPackage],
+                  //       false,
+                  //       null,
+                  //       false,
+                  //       null
+                  //     ],
+                  //   );
+                        var res = await PaymentService.ins.orderPackage(
+                            createOrder: CreateOrder(packageId: widget.package?.id as int, note: ""));
+                        if (res.isOk) {
+                          _bottomController.currentIndex.value = 2;
+                          Get.offAllNamed(myBottomBarRoute);
+                        } else {
+                          print(res.error);
+                        }
+                      }
+                    : () {
+                        Get.defaultDialog(
                           title: "Warning",
                           content: const Text("You can't buy your service"),
                         );
-                },
-                child: Text("Continue ${widget.type}"),
+                      },
+                child: Text(
+                  "Apply".tr,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
       ],
     );

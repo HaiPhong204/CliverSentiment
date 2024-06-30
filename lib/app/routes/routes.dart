@@ -10,6 +10,7 @@ const String verifyEmailScreenRoute = "/verify_email_screen";
 const String myBottomBarRoute = "/bottom_bar";
 const String preferencesSettingScreenRoute = "/setting/pref";
 const String postDetailScreenRoute = "/seller/post/post_detail";
+const String getAllJobRecommendRoute = "/buyer/home_screen/getAllJob";
 const String postReviewScreenRoute = "/seller/post/review_screen";
 const String earningScreenRoute = "/seller/earning";
 const String addPostScreenRoute = "/seller/post/add_post";
@@ -21,6 +22,7 @@ const String searchRoute = '/search_screen';
 const String saveListRoute = '/save_list_screen';
 const String saveListDetailRoute = '/save_list_detail_screen';
 const String editPostScreenRoute = "/seller/post/edit_post";
+const String profileScreenRoute = "/authentication/profile/profile_screen";
 const String customerReviewScreenRoute = "/customer_review_screen";
 
 //order route name

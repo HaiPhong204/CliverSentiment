@@ -46,7 +46,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
             ),
           ),
           title: const Text(
-            "Order Review",
+            "Order Payment",
             style: TextStyle(
               color: Colors.black,
               fontSize: 24,

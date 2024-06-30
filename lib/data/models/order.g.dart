@@ -17,14 +17,14 @@ Order _$OrderFromJson(Map<String, dynamic> json) => Order(
       price: json['price'] as int?,
       note: json['note'] as String?,
       dueBy: json['dueBy'] as String?,
-      buyerId: json['buyerId'] as String?,
-      buyer: json['buyer'] == null
+      recruiterId: json['recruiterId'] as String?,
+      recruiter: json['recruiter'] == null
           ? null
-          : User.fromJson(json['buyer'] as Map<String, dynamic>),
-      sellerId: json['sellerId'] as String?,
-      seller: json['seller'] == null
+          : User.fromJson(json['recruiter'] as Map<String, dynamic>),
+      candidateId: json['candidateId'] as String?,
+      candidate: json['candidate'] == null
           ? null
-          : User.fromJson(json['seller'] as Map<String, dynamic>),
+          : User.fromJson(json['candidate'] as Map<String, dynamic>),
       revisionTimes: json['revisionTimes'] as int?,
       leftRevisionTimes: json['leftRevisionTimes'] as int?,
       packageId: json['packageId'] as int?,
@@ -48,10 +48,10 @@ Map<String, dynamic> _$OrderToJson(Order instance) => <String, dynamic>{
       'price': instance.price,
       'note': instance.note,
       'dueBy': instance.dueBy,
-      'buyerId': instance.buyerId,
-      'buyer': instance.buyer?.toJson(),
-      'sellerId': instance.sellerId,
-      'seller': instance.seller?.toJson(),
+      'recruiterId': instance.recruiterId,
+      'recruiter': instance.recruiter?.toJson(),
+      'candidateId': instance.candidateId,
+      'candidate': instance.candidate?.toJson(),
       'revisionTimes': instance.revisionTimes,
       'leftRevisionTimes': instance.leftRevisionTimes,
       'packageId': instance.packageId,

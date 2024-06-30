@@ -10,7 +10,7 @@ import '../../../../../routes/routes.dart';
 import '../../../../features.dart';
 
 class PostDetailScreen extends StatefulWidget {
-  const PostDetailScreen({Key? key}) : super(key: key);
+  const PostDetailScreen({super.key});
 
   @override
   State<PostDetailScreen> createState() => _PostDetailScreenState();
@@ -69,13 +69,11 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
             )
           : null,
       floatingActionButton: Visibility(
-        visible: (post?.userId == _userController.currentUser.value.id)
-            ? false
-            : true,
+        visible: (post?.userId == _userController.currentUser.value.id) ? false : true,
         child: FloatingActionButton.extended(
           extendedPadding: const EdgeInsets.symmetric(horizontal: 10),
-          backgroundColor: Colors.white,
-          label: const Text("Chat"),
+          backgroundColor: AppColors.primaryWhite,
+          label: Text("Chat".tr, style: TextStyle(color: AppColors.blackColor),),
           icon: const SizedBox(
             width: 30,
             height: 30,
@@ -98,12 +96,9 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
             children: [
               InkWellWrapper(
                 onTap: () {
-                  Get.toNamed(sellerProfileScreenRoute,
-                      arguments: post!.userId);
+                  Get.toNamed(sellerProfileScreenRoute, arguments: post!.userId);
                 },
-                border: Border(
-                    bottom: BorderSide(
-                        width: 0.5, color: AppColors.metallicSilver)),
+                border: Border(bottom: BorderSide(width: 0.5, color: AppColors.metallicSilver)),
                 paddingChild: EdgeInsets.symmetric(vertical: getHeight(10)),
                 margin: EdgeInsets.only(bottom: getHeight(5)),
                 child: Row(
@@ -123,55 +118,48 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(post?.user?.name ?? '',
-                            style: TextStyle(
-                                fontSize: getFont(17),
-                                fontWeight: FontWeight.w700)),
+                            style: TextStyle(fontSize: getFont(17), fontWeight: FontWeight.w700)),
                         SizedBox(height: getHeight(5)),
                       ],
                     ),
                     Visibility(
                       visible:
-                          (post?.userId == _userController.currentUser.value.id)
-                              ? false
-                              : true,
+                          (post?.userId == _userController.currentUser.value.id) ? false : true,
                       child: Expanded(
                           child: Align(
                         alignment: Alignment.centerRight,
                         child: InkWellWrapper(
-                            paddingChild: const EdgeInsets.all(5),
-                            borderRadius: BorderRadius.circular(20),
-                            onTap: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                context: context,
-                                backgroundColor: AppColors.primaryWhite,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10)),
-                                ),
-                                builder: (BuildContext context) {
-                                  return BottomSaveList(
-                                    serviceId: id,
-                                    icon: post?.images?[0],
-                                    onTapChangeStatus: (value) async {
-                                      EasyLoading.show();
-                                      await SaveServiceAPI.ins
-                                          .changeStatusServicesSaveListById(
-                                              listId: value, serviceId: id);
-                                      EasyLoading.dismiss();
-                                    },
-                                  );
-                                },
-                              ).then((value) {
-                                getPostByID();
-                              });
-                            },
-                            child: post!.isSaved!
-                                ? const Icon(Icons.favorite_outlined,
-                                    size: 22, color: Colors.red)
-                                : const Icon(Icons.favorite_border_outlined,
-                                    size: 22)),
+                          paddingChild: const EdgeInsets.all(5),
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              context: context,
+                              backgroundColor: AppColors.primaryWhite,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                              ),
+                              builder: (BuildContext context) {
+                                return BottomSaveList(
+                                  serviceId: id,
+                                  icon: post?.images?[0],
+                                  onTapChangeStatus: (value) async {
+                                    EasyLoading.show();
+                                    await SaveServiceAPI.ins.changeStatusServicesSaveListById(
+                                        listId: value, serviceId: id);
+                                    EasyLoading.dismiss();
+                                  },
+                                );
+                              },
+                            ).then((value) {
+                              getPostByID();
+                            });
+                          },
+                          child: post!.isSaved!
+                              ? const Icon(Icons.favorite_outlined, size: 22, color: Colors.red)
+                              : const Icon(Icons.favorite_border_outlined, size: 22),
+                        ),
                       )),
                     )
                   ],
@@ -186,15 +174,38 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
                 ),
               ),
               Text(
+                "Description".tr,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
                 post!.description ?? "",
+                style: const TextStyle(
+                  fontSize: 14,
+                ),
+              ),
+              Text(
+                "Requirement".tr,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                post!.requirement ?? "",
                 style: const TextStyle(
                   fontSize: 14,
                 ),
               ),
               PostDetailBody(
                 post: post!,
-                onTabSelected: (value) =>
-                    _paymentController.selectedPackage = value,
+                onTabSelected: (value) => _paymentController.selectedPackage = value,
               ),
             ],
           ),

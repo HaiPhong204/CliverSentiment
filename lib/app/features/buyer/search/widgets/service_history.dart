@@ -142,7 +142,7 @@ class _ServiceHistoryState extends State<ServiceHistory> {
           ),
           if (isGetDataPostsRecent)
           SizedBox(
-            height: getHeight(280),
+            height: getHeight(297),
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,

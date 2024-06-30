@@ -51,13 +51,14 @@ class _SellerOrderScreenState extends State<SellerOrderScreen> {
                           itemBuilder: (_, index) {
                             final Order order =
                                 sellerOrderController.orders[index];
+
                             return HorizontalOrderItem(
                               order: order,
                               getImageFuture:
                                   sellerOrderController.getOrderImage(
                                       postId: order.package?.postId as int),
                               onTap: () =>
-                                  toOrderDetailScreen(orderId: order.id as int),
+                                  toOrderDetailScreen(orderId: order.id as int, postId: order.package?.postId as int),
                             );
                           },
                           itemCount: sellerOrderController.orders.length,
@@ -133,12 +134,19 @@ class _SellerOrderScreenState extends State<SellerOrderScreen> {
                     orderStatus: "Completed");
               }, 4),
               const Divider(height: 20),
-              buildSelectionRow(Icons.cancel_outlined, "Cancelled".tr, () {
+              buildSelectionRow(Icons.done_all, "Pending payment".tr, () {
                 currentFilter = 5;
                 Navigator.pop(context);
                 sellerOrderController.getSellerOrderByStatus(
-                    orderStatus: "Cancelled");
+                    orderStatus: "PendingPayment");
               }, 5),
+              const Divider(height: 20),
+              buildSelectionRow(Icons.cancel_outlined, "Cancelled".tr, () {
+                currentFilter = 6;
+                Navigator.pop(context);
+                sellerOrderController.getSellerOrderByStatus(
+                    orderStatus: "Cancelled");
+              }, 6),
             ],
           ),
         );
@@ -174,8 +182,8 @@ class _SellerOrderScreenState extends State<SellerOrderScreen> {
     );
   }
 
-  Future<void> toOrderDetailScreen({required int orderId}) async {
-    await Get.toNamed(sellerOrderDetailScreenRoute, arguments: [orderId]);
+  Future<void> toOrderDetailScreen({required int orderId, required int postId}) async {
+    await Get.toNamed(sellerOrderDetailScreenRoute, arguments: [orderId, postId]);
     switch (currentFilter) {
       case 0:
         sellerOrderController.getSellerOrderByStatus(orderStatus: null);
@@ -193,6 +201,9 @@ class _SellerOrderScreenState extends State<SellerOrderScreen> {
         sellerOrderController.getSellerOrderByStatus(orderStatus: "Completed");
         break;
       case 5:
+        sellerOrderController.getSellerOrderByStatus(orderStatus: "PendingPayment");
+        break;
+      case 6:
         sellerOrderController.getSellerOrderByStatus(orderStatus: "Cancelled");
         break;
       default:

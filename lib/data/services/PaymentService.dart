@@ -22,7 +22,7 @@ class PaymentService extends GetConnect {
     );
   }
 
-  Future<Response> orderWithBudget({required CreateOrder createOrder}) async {
+  Future<Response> orderPackage({required CreateOrder createOrder}) async {
     return await post(
       "$api_url/orders",
       createOrder.toJson(),
